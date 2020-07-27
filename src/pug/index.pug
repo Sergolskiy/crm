@@ -1,0 +1,21 @@
+extends _layout
+
+block vars
+  - var pageTitle = "Nav page";
+  - var pageClass = "";
+  - var pageActive = "Navepage";
+
+block content
+  //.webp-img(data-webp="./img/Rectangle5.webp" data-img="./img/Rectangle5.jpg")
+
+    picture
+      source(srcset="./img/logo.webp" type="image/webp")
+      source(srcset="./img/logo.jpg" type="image/png")
+      img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img")
+
+  div.main-wrap
+    div.prevpage(style="margin: 0 auto; height: 500px; display: flex; justify-content: center; color: black; flex-direction: column; align-items: center;")
+      div
+        a(href="./index1.html" target="_blank" style="font-size: 18px;") home
+
+
