@@ -120,8 +120,23 @@ $(document).ready(function () {
   $('.timepicker').timepicker();
   $('.datepicker').datepicker();
 
-});
+  $(document).on('change' , '.form-group input' , function(e){
+    if($(this).val().length !== 0){
+      $(this).siblings('label').addClass('show');
+    } else {
+      $(this).siblings('label').removeClass('show');
+    }
+  });
+  $(document).on('focus' , '.form-group input' , function(e) {
+      $(this).siblings('label').addClass('show');
+  });
+  $(document).on('mouseleave' , '.form-group input' , function(e) {
+    if($(this).val().length === 0){
+      $(this).siblings('label').removeClass('show');
+    }
+  });
 
+});
 
 //script fro webp img and background
 var hasWebP = (function () {

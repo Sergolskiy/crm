@@ -651,6 +651,10 @@ input{
   .datepicker-modal{
     margin: 0 auto;
 
+    .datepicker-date-display .date-text{
+      color: #F5F6FA;
+    }
+
     .datepicker-controls > button{
       margin-top: 0;
     }
@@ -717,6 +721,14 @@ input{
 
   .timepicker-modal{
     margin: 0 auto;
+
+    .timepicker-text-container span{
+      color: rgba(245, 246, 250, 0.57);
+    }
+
+    .timepicker-span-am-pm > div{
+      color: rgba(245, 246, 250, 0.57);
+    }
 
     .timepicker-container{
       border-radius: 10px;
@@ -806,6 +818,109 @@ input{
       }
     };
   }
+
+}
+
+.change-pass{
+
+  * {
+    font-family: "Roboto";
+  }
+
+  .modal-content{
+    background: #EDF0F6;
+  }
+
+  .modal-dialog{
+    max-width: 388px;
+  }
+
+  .nav-tabs{
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    border: 0;
+  }
+
+  .nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-link{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.005em;
+    color: #171D30;
+    border: 0;
+    text-align: center;
+
+    &.active{
+      border-bottom: 2px solid #072A4F;
+      background: transparent;
+    }
+  }
+
+  &__form-btn{
+    margin-top: 80px;
+    margin-bottom: 35px;
+  }
+
+  .form-group{
+    position: relative;
+    margin-bottom: 25px;
+
+
+    label{
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 13px;
+      line-height: 15px;
+      color: #171D30;
+      transition: .3s all;
+
+      &.show{
+        transform: translateY(-20px);
+      }
+    }
+
+    input{
+      border: 0;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(7, 42, 79, 0.1);
+      font-size: 13px;
+      line-height: 15px;
+      color: #171D30;
+      background: transparent;
+      padding-left: 0;
+      padding-right: 0;
+
+      &:focus{
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .invalid-feedback {
+      background: rgba(235, 0, 41, 0.05);
+      padding: 4px 5px;
+      font-size: 10px;
+      line-height: 12px;
+      color: rgba(235, 0, 41, 0.9);
+      margin-top: 0;
+    }
+    &.error-field .invalid-feedback{
+      display: block;
+    }
+
+    &.error-field label{
+      color: rgba(235, 0, 41, 0.9);
+    }
+  }
+
 
 }
 

@@ -1,7 +1,7 @@
 footer.footer
 
-  button(type="button" class="btn btn-primary" data-toggle="modal" data-target=".sched-public-js")
-    sched-public
+  button(type="button" class="btn btn-primary" data-toggle="modal" data-target=".sched-public-js") sched-public
+  button(type="button" class="btn btn-primary" data-toggle="modal" data-target=".change-pass-js") change-pass
 
   .sched-public.sched-public-js.modal.fade(tabindex='-1' role='dialog' aria-labelledby='schedPublicModalLabel' aria-hidden='true')
     .modal-dialog.modal-dialog-centered(role='document')
@@ -10,18 +10,65 @@ footer.footer
           include ../../img/ico/curve-ico.svg
           span Запланировать публикацию
         .modal-body
-          .modal-row.sched-public-row
-            .sched-public__input
-              label(for="dateFields") Дата
-              input(type="text" class="datepicker" id="dateFields" placeholder="00.00.0000" required )
-              include ../../img/ico/calendar-ico.svg
-            .sched-public__input
-              label(for="timeFields") Время
-              input(type="text" class="timepicker" id="timeFields" placeholder="00:00" required )
-              include ../../img/ico/calendar-ico.svg
+          .sched-public__form
+            form
+              .form-group.sched-public__input
+                label(for="dateFields") Дата
+                input(type="text" class="datepicker" id="dateFields" placeholder="00.00.0000" required )
+                include ../../img/ico/calendar-ico.svg
+              .form-group.sched-public__input
+                label(for="timeFields") Время
+                input(type="text" class="timepicker" id="timeFields" placeholder="00:00" required )
+                include ../../img/ico/calendar-ico.svg
         .modal-footer
-          button.btn.btn-secondary(type='button' data-dismiss='modal') Отмена
-          button.btn.btn-primary(type='button') ОК
+          button.btn(type='button' data-dismiss='modal') Отмена
+          button.btn(type='button') ОК
 
+  .change-pass.change-pass-js.modal.fade(tabindex='-1' role='dialog' aria-labelledby='changePassModalLabel' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content
+        .modal-header
+          h5(class="modal-title") Сменить пароль
+          button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+            span(aria-hidden="true") &times;
+        .modal-body
+          ul.nav.nav-tabs(role='tablist')
+            li.nav-item(role='presentation')
+              a.nav-link.active(data-toggle='tab', href='#administration', role='tab', aria-controls='administration', aria-selected='true') Администратор
+            li.nav-item(role='presentation')
+              a.nav-link(data-toggle='tab', href='#editor', role='tab', aria-controls='editor', aria-selected='false') Редактор
+          .tab-content
+            #administration.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+              form.change-pass__from
+                .form-group.error-field
+                  label(for="exampleInputPassword1" class="col-form-label") Старый пароль
+                  input#exampleInputPassword1.form-control(type='password' placeholder='' required)
+                  .invalid-feedback Введен неверный пароль
+                .form-group
+                  label(for="exampleInputPassword2" class="col-form-label") Новый пароль
+                  input#exampleInputPassword2.form-control(type='password' placeholder='' required)
+                  .invalid-feedback Пароли должны совпадать
+                .form-group
+                  label(for="exampleInputPassword3" class="col-form-label") Повторите новый пароль
+                  input#exampleInputPassword3.form-control(type='password' placeholder='' required)
+                  .invalid-feedback Пароли должны совпадать
+                .change-pass__form-btn
+                  button.btn.btn-primary.btn-lg.btn-block(type='submit') Сохранить
+            #editor.tab-pane.fade(role='tabpanel', aria-labelledby='editor-tab')
+              form.change-pass__from
+                .form-group
+                  label(for="exampleInputPassword4" class="col-form-label") Старый пароль
+                  input#exampleInputPassword4.form-control(type='password', placeholder='' required)
+                  .invalid-feedback Введен неверный пароль
+                .form-group
+                  label(for="exampleInputPassword5" class="col-form-label") Новый пароль
+                  input#exampleInputPassword5.form-control(type='password' placeholder='' required)
+                  .invalid-feedback Пароли должны совпадать
+                .form-group
+                  label(for="exampleInputPassword6" class="col-form-label") Повторите новый пароль
+                  input#exampleInputPassword6.form-control(type='password' placeholder='' required)
+                  .invalid-feedback Пароли должны совпадать
+                .change-pass__form-btn
+                  button.btn.btn-primary.btn-lg.btn-block(type='submit') Сохранить
 
 
