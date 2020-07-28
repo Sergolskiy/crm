@@ -94,7 +94,8 @@ gulp.task('js-libs', () => {
       'node_modules/inputmask/dist/jquery.inputmask.js',
       // 'node_modules/owl.carousel/dist/owl.carousel.js',
       // 'node_modules/slick-carousel/slick/slick.js',
-      'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js'
+      'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+      'node_modules/materialize-css/dist/js/materialize.min.js',
     ])
     .pipe(gulp.dest('dist/js/libs/'))
     .pipe(concat('libs.js'))

@@ -1,4 +1,23 @@
 @import '../../node_modules/normalize.css/normalize.css';
+
+// Color
+@import "../../node_modules/materialize-css/sass/components/_color-variables.scss";
+@import "../../node_modules/materialize-css/sass/components/_color-classes.scss";
+
+// Variables;
+@import "../../node_modules/materialize-css/sass/components/_variables.scss";
+
+// Reset
+@import "../../node_modules/materialize-css/sass/components/_normalize.scss";
+
+// components
+@import "../../node_modules/materialize-css/sass/components/_global.scss";
+
+@import "../../node_modules/materialize-css/sass/components/_datepicker.scss";
+@import "../../node_modules/materialize-css/sass/components/_timepicker.scss";
+
+
+@import "_materialSelect.scss";
 @import "fonts.scss";
 @import "_helper.scss";
 @import "main.scss";

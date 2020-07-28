@@ -7,7 +7,7 @@ $blacklight: #656073;
 
 * {
   box-sizing: border-box;
-  font-family: "HelvericaNeueCyr";
+  font-family: "Roboto";
   font-weight: 400;
 }
 
@@ -231,6 +231,229 @@ input{
 
 
 
+
+.sched-public{
+
+  * {
+    font-family: "Roboto";
+  }
+
+
+  .modal-dialog{
+    max-width: 360px;
+  }
+
+  .modal-header{
+    border: 0;
+    justify-content: flex-start;
+
+    & > svg{
+      margin-right: 15px;
+    }
+
+    & > span{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.005em;
+      color: #181D30;
+    }
+  }
+
+  &__input{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    position: relative;
+
+    & > svg {
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    & > label{
+      margin-bottom: 0;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.005em;
+      color: #181D30;
+    }
+
+    & > input{
+      max-width: 240px;
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid #C1C9D3;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.005em;
+      color: #181D30;
+    }
+  }
+
+  .datepicker-modal{
+    margin: 0 auto;
+
+    .datepicker-controls > button{
+      margin-top: 0;
+    }
+
+    .select-wrapper input.select-dropdown{
+      font-family: "Roboto";
+      border-bottom: 0;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 0;
+      text-align: center;
+      color: #596079;
+    }
+
+    .datepicker-container{
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .datepicker-date-display{
+      background: #1A2327;
+    }
+
+    .datepicker-calendar-container{
+      background: #F5F6FA;
+    }
+
+    .datepicker-day-button{
+      font-family: "Roboto";
+      font-weight: 700;
+      font-size: 18px;
+      text-align: center;
+      color: #646464;
+    }
+
+    .is-selected .datepicker-day-button{
+      background: #072A4F;
+      color: white;
+    }
+
+    .is-today .datepicker-day-button{
+        color: #072A4F;
+    }
+
+    .datepicker-table thead{
+      display: none;
+    }
+
+    .confirmation-btns{
+      margin-top: 20px;
+    }
+
+    .confirmation-btns > button{
+      font-family: "Roboto";
+      border: 0;
+      background: transparent;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.005em;
+      text-transform: uppercase;
+      color: #072A4F;
+    }
+  }
+
+  .timepicker-modal{
+    margin: 0 auto;
+
+    .timepicker-container{
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .timepicker-digital-display{
+      background-color: #1A2327;
+    }
+
+    .timepicker-analog-display{
+      background-color: #F5F6FA;
+    }
+
+    .datepicker-table thead{
+      display: none;
+    }
+
+    .confirmation-btns{
+      margin-top: 20px;
+    }
+
+    .confirmation-btns > button{
+      font-family: "Roboto";
+      border: 0;
+      background: transparent;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.005em;
+      text-transform: uppercase;
+      color: #072A4F;
+    }
+
+    .text-primary{
+      color: white !important;
+    }
+
+    .timepicker-tick{
+      transition: .15s all;
+      font-weight: 700;
+    }
+
+    .timepicker-tick.active, .timepicker-tick:hover{
+      background-color:  #072A4F !important;
+      color: white !important;
+    }
+
+    .timepicker-canvas line{
+      stroke: rgba(7, 42, 79, 0.5);
+    }
+
+    .timepicker-canvas-bg{
+      fill: rgba(7, 42, 79, 0.5);
+    }
+
+    .timepicker-canvas-bearing{
+      fill: #072A4F;
+    }
+  }
+
+  .modal-footer{
+    border: 0;
+    padding-top: 0;
+
+    & > button {
+      font-family: "Roboto";
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      letter-spacing: 0.005em;
+      text-transform: uppercase;
+      color: rgba(7, 42, 79, 0.8);
+      border: 0;
+      background: transparent;
+
+      &:not(:disabled):not(.disabled):active{
+        color: inherit;
+        background-color: transparent;
+        border-color:  transparent;
+        font-weight: bold;
+        color: #072A4F;
+      }
+
+      &:focus,
+      &:not(:disabled):not(.disabled):active:focus{
+        box-shadow: none;
+      }
+    };
+  }
+
+}
 
 
 
