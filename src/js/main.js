@@ -117,6 +117,9 @@ $(document).ready(function () {
   });
   /*popups end*/
 
+  $('.timepicker').timepicker();
+  $('.datepicker').datepicker();
+
 });
 
 
