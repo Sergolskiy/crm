@@ -86,8 +86,6 @@ gulp.task('js-libs', () => {
       // 'node_modules/lightbox2/dist/js/lightbox.min.js',
       // 'node_modules/aos/dist/aos.js',
       // 'node_modules/@popperjs/core/lib/popper.js',
-      'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
-      'node_modules/bootstrap-select/dist/js/bootstrap-select.js',
       // 'node_modules/rellax/rellax.js',
       // 'src/js/sine-waves.js',
       'node_modules/blazy/blazy.min.js',
@@ -96,6 +94,8 @@ gulp.task('js-libs', () => {
       // 'node_modules/slick-carousel/slick/slick.js',
       'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
       'node_modules/materialize-css/dist/js/materialize.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+    'node_modules/bootstrap-select/dist/js/bootstrap-select.js',
     ])
     .pipe(gulp.dest('dist/js/libs/'))
     .pipe(concat('libs.js'))

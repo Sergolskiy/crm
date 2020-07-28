@@ -35,7 +35,7 @@ block content
                 tr
                   th(scope='col')
                     .table__top-left.d-flex.align-items-center.justify-content-between.pr-3 Дата
-                      a(href="#").calendar
+                      a(href="#" data-toggle="modal" data-target=".sched-public-js").calendar
                         include ../img/icons/calendar-b.svg
                   th(scope='col')
                     .table__top-center Заглавие
@@ -63,21 +63,24 @@ block content
                       option Soybeans
                       option Oils
                   td
-                    .form-check
-                      input#exampleRadios61.form-check-input(type='radio', name='exampleRadios1', value='option1', checked='')
-                      label.form-check-label(for='exampleRadios61')
+                    .form-check.custom-control.custom-radio
+                      input#exampleRadios61.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='option1', checked='')
+                      label.form-check-label.custom-control-label(for='exampleRadios61')
                   td
-                    .form-check
-                      input#exampleRadios51.form-check-input(type='radio', name='exampleRadios2', value='option1', checked='')
-                      label.form-check-label(for='exampleRadios51')
+                    .form-check.custom-control.custom-radio
+                      input#exampleRadios51.form-check-input.custom-control-input(type='radio', name='exampleRadios2', value='option1')
+                      label.form-check-label.custom-control-label(for='exampleRadios51')
                   td
                     .table-lang
                       span.active RU
                       span.active \
                       span EN
                   td
-                    a(href="#").table-change
-                    a(href="#").table-remove
+                    .d-flex.justify-content-around
+                      a(href="#").table-change
+                        include ../img/icons/edit.svg
+                      a(href="#").table-remove
+                        include ../img/icons/remove.svg
 
 
                 tr
@@ -93,21 +96,24 @@ block content
                       option Soybeans
                       option Oils
                   td
-                    .form-check
-                      input#exampleRadios41.form-check-input(type='radio', name='exampleRadios3', value='option1', checked='')
-                      label.form-check-label(for='exampleRadios41')
+                    .form-check.custom-control.custom-radio
+                      input#exampleRadios41.form-check-input.custom-control-input(type='radio', name='exampleRadios3', value='option1')
+                      label.form-check-label.custom-control-label(for='exampleRadios41')
                   td
-                    .form-check
-                      input#exampleRadios1.form-check-input(type='radio', name='exampleRadios4', value='option1', checked='')
-                      label.form-check-label(for='exampleRadios1')
+                    .form-check.custom-control.custom-radio
+                      input#exampleRadios1.form-check-input.custom-control-input(type='radio', name='exampleRadios4', value='option1', checked='')
+                      label.form-check-label.custom-control-label(for='exampleRadios1')
                   td
                     .table-lang
                       span.active RU
                       span.active \
                       span EN
                   td
-                    a(href="#").table-change
-                    a(href="#").table-remove
+                    .d-flex.justify-content-around
+                      a(href="#").table-change
+                        include ../img/icons/edit.svg
+                      a(href="#").table-remove
+                        include ../img/icons/remove.svg
 
 
                 tr.dibable-row
@@ -123,37 +129,42 @@ block content
                       option Soybeans
                       option Oils
                   td
-                    .form-check
-                      input#exampleRadios31.form-check-input(type='radio', name='exampleRadios5', value='option1', checked='')
-                      label.form-check-label(for='exampleRadios31')
+                    .form-check.custom-control.custom-radio
+                      input#exampleRadios31.form-check-input.custom-control-input(type='radio', name='exampleRadios5', value='option1', checked='')
+                      label.form-check-label.custom-control-label(for='exampleRadios31')
                   td
-                    .form-check
-                      input#exampleRadios21.form-check-input(type='radio', name='exampleRadios6', value='option1', checked='')
-                      label.form-check-label(for='exampleRadios21')
+                    .form-check.custom-control.custom-radio
+                      input#exampleRadios21.form-check-input.custom-control-input(type='radio', name='exampleRadios6', value='option1', checked='')
+                      label.form-check-label.custom-control-label(for='exampleRadios21')
                   td
                     .table-lang
                       span.active RU
                       span.active \
                       span EN
                   td
-                    a(href="#").table-change
-                    a(href="#").table-remove
+                    .d-flex.justify-content-around
+                      a(href="#").table-change
+                        include ../img/icons/edit.svg
+                      a(href="#").table-remove
+                        include ../img/icons/remove.svg
 
 
 
-    nav(aria-label='Page navigation example')
-      ul.pagination
+    nav.pagination
+      ul.pagination__list
         li.page-item
           a.page-link(href='#', aria-label='Previous')
-            span(aria-hidden='true') «
-        li.page-item
+            span(aria-hidden='true') <
+        li.page-item.active
           a.page-link(href='#') 1
         li.page-item
           a.page-link(href='#') 2
         li.page-item
           a.page-link(href='#') 3
         li.page-item
+          a.page-link(href='#') 4
+        li.page-item
           a.page-link(href='#', aria-label='Next')
-            span(aria-hidden='true') »
+            span(aria-hidden='true') >
 
 
