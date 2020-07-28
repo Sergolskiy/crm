@@ -1,9 +1,9 @@
 extends _layout
 
 block vars
-  - var pageTitle = "Home page";
+  - var pageTitle = "";
   - var pageClass = "";
-  - var pageActive = "homepage";
+  - var pageActive = "";
 
 block content
   //.webp-img(data-webp="./img/Rectangle5.webp" data-img="./img/Rectangle5.jpg")
@@ -16,17 +16,14 @@ block content
   div.main-wrap
     h1.page-title Котировки
 
-    .content
+    .content.quotes
       .content__inner
         .content__top
           .content__top-left
-            .site-search
-              form
-                .site-search__input
-                  input(type="text" placeholder="Поиск ...")
+            .quotes-table-name Agri
           .content__top-right
             a.btn.btn-primary(href="#")
-              span +
+              span + &nbsp;
               | Добавить
         .content__main
           table.table.quotes-table
@@ -45,9 +42,50 @@ block content
                 td +6-6
                 td
                   a(href="#").table-remove
+                    include ../img/ico/remove-ico.svg
+              tr
+                td ZCU20
+                td Dexcom
+                td 346-4
+                td +6-6
+                td
+                  a(href="#").table-remove
+                    include ../img/ico/remove-ico.svg
+              tr
+                td ZCU20
+                td Dexcom
+                td 346-4
+                td +6-6
+                td
+                  a(href="#").table-remove
+                    include ../img/ico/remove-ico.svg
+              tr
+                td ZCU20
+                td Dexcom
+                td 346-4
+                td +6-6
+                td
+                  a(href="#").table-remove
+                    include ../img/ico/remove-ico.svg
+              tr
+                td DXM
+                td Dexcom
+                td 346-4
+                td +8-8
+                td
+                  a(href="#").table-remove
+                    include ../img/ico/remove-ico.svg
+              tr
+                td DXM
+                td Dexcom
+                td 346-4
+                td +8-8
+                td
+                  a(href="#").table-remove
+                    include ../img/ico/remove-ico.svg
 
 
-    nav(aria-label='Page navigation example')
+    //nav(aria-label='Page navigation example')
       ul.pagination
         li.page-item
           a.page-link(href='#', aria-label='Previous')
