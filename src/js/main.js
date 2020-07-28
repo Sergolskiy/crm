@@ -45,6 +45,38 @@ $(document).ready(function () {
     $(this).next().slideToggle();
   });
 
+  $('.photo-block__link').click(function (e) {
+    // e.preventDefault();
+    $(this).find('input')[0].click();
+  });
+
+  $('.photo-block__link input[type="file"]').change(function () {
+    if($(this).val() == ''){
+      return;
+    }
+    readURL(this);
+    $(this).parent().hide();
+  });
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+
+      var reader = new FileReader();
+
+      reader.readAsDataURL(input.files[0]); // convert to base64 string
+
+      reader.onload = function(e) {
+        $(input).parent().next().addClass('active').find('.selected-photo__item').html('<img src="'+reader.result+'" />');
+      }
+    }
+  }
+
+  $('.selected-photo__remove').click(function () {
+    $(this).closest('.photo-block__item').find('input[type="file"]').val('');
+    $(this).parent().removeClass('active').prev().show();
+  });
+
+
   // var bLazy = new Blazy({
   //   src: 'data-blazy' // Default is data-src
   // });
@@ -120,8 +152,23 @@ $(document).ready(function () {
   $('.timepicker').timepicker();
   $('.datepicker').datepicker();
 
-});
+  $(document).on('change' , '.form-group input' , function(e){
+    if($(this).val().length !== 0){
+      $(this).siblings('label').addClass('show');
+    } else {
+      $(this).siblings('label').removeClass('show');
+    }
+  });
+  $(document).on('focus' , '.form-group input' , function(e) {
+      $(this).siblings('label').addClass('show');
+  });
+  $(document).on('mouseleave' , '.form-group input' , function(e) {
+    if($(this).val().length === 0){
+      $(this).siblings('label').removeClass('show');
+    }
+  });
 
+});
 
 //script fro webp img and background
 var hasWebP = (function () {

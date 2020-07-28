@@ -20,80 +20,110 @@ block content
       .row
         .col-md-7
           .block-title.block-title--mb Заглавие
-          ul.nav.nav-tabs(role='tablist')
+          ul.nav-type-1.nav.nav-tabs.d-flex.justify-content-end(role='tablist')
             li.nav-item(role='presentation')
-              a.nav-link.active(data-toggle='tab', href='#rus', role='tab', aria-controls='home', aria-selected='true') Home
+              a.nav-link.active(data-toggle='tab', href='#rus', role='tab', aria-controls='home', aria-selected='true') Английский
             li.nav-item(role='presentation')
-              a.nav-link(data-toggle='tab', href='#eng', role='tab', aria-controls='profile', aria-selected='false') Profile
+              a.nav-link(data-toggle='tab', href='#eng', role='tab', aria-controls='profile', aria-selected='false') Русский
           .tab-content
             #rus.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
-              input.form-control(type='text' name="head-eng")
+              input.form-control(type='text' name="head-eng" placeholder='Введите текст')
             #eng.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
-              input.form-control(type='text' name="head-rus")
+              input.form-control(type='text' name="head-rus" placeholder='Введите текст')
 
           .block-title.block-title--mb Текст
-          ul.nav.nav-tabs(role='tablist')
+          ul.nav.nav-tabs.nav-type-1.d-flex.justify-content-end(role='tablist')
             li.nav-item(role='presentation')
-              a.nav-link.active(data-toggle='tab', href='#rus2', role='tab', aria-controls='home', aria-selected='true') Home
+              a.nav-link.active(data-toggle='tab', href='#rus2', role='tab', aria-controls='home', aria-selected='true') Английский
             li.nav-item(role='presentation')
-              a.nav-link(data-toggle='tab', href='#eng2', role='tab', aria-controls='profile', aria-selected='false') Profile
+              a.nav-link(data-toggle='tab', href='#eng2', role='tab', aria-controls='profile', aria-selected='false') Русский
           .tab-content
             #rus2.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
-              textarea.form-control(rows='4' name='text-eng')
+              textarea.form-control(rows='6' name='text-eng')
             #eng2.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
-              textarea.form-control(rows='4' name='rus-eng')
+              textarea.form-control(rows='6' name='rus-eng')
 
           .block-title Фото
 
           .photo-block
             .photo-block__inner
               .photo-block__item
-                a(href="#").photo-block__link
+                a(href="javascript:void(0)").photo-block__link
+                  img(src="./img/add-photo.svg")
                   span Добавить
+                  input(type="file").d-none
+                .selected-photo
+                  .selected-photo__item
+                  a(href="javascript:void(0)").selected-photo__remove
               .photo-block__item
-                a(href="#").photo-block__link
+                a(href="javascript:void(0)").photo-block__link
+                  img(src="./img/add-photo.svg")
                   span Добавить
+                  input(type="file").d-none
+                .selected-photo
+                  .selected-photo__item
+                  a(href="javascript:void(0)").selected-photo__remove
               .photo-block__item
-                a(href="#").photo-block__link
+                a(href="javascript:void(0)").photo-block__link
+                  img(src="./img/add-photo.svg")
                   span Добавить
+                  input(type="file").d-none
+                .selected-photo
+                  .selected-photo__item
+                  a(href="javascript:void(0)").selected-photo__remove
 
         .col-md-5
-          a(href="#").remove-article Удалить статью
-          .content__inner
+          .remove-article
+            a(href="#").remove-article__inner Удалить статью
+          .content__inner.content__inner--noborder.mb-4
             .status-block
               .block-title Статус
               .status-block__top.d-flex
                 span Выбрать:
-                .form-check
-                  input#Radios1.form-check-input(type='radio', name='Radios', value='option1', )
-                  label.form-check-label(for='Radios1')
+                .form-check.custom-control.custom-radio
+                  input#exampleRadios21.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='option1', checked='')
+                  label.form-check-label.custom-control-label(for='exampleRadios21')
                     | Черновик
-                .form-check
-                  input#Radios2.form-check-input(type='radio', name='Radios', value='option2' checked='')
-                  label.form-check-label(for='Radios2')
+                .form-check.custom-control.custom-radio
+                  input#exampleRadios61.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='option1', checked='')
+                  label.form-check-label.custom-control-label(for='exampleRadios61')
                     | Публикация
               .status-block__txt.d-flex
                 span Эта публикация запланирована на:
+                span 21.06.2020 <br> 19:30
               .status-block__btn.d-flex.justify-content-between
                 a(href="#").btn.btn-secondary Запланировать
                 a(href="#").btn.btn-primary Опубликовать
 
-          .content__inner
+          .content__inner.content__inner--noborder
             .category-block
               .block-title Категория
               .category-block__checkboxes
-                .form-check
-                  input#Checkbox1.form-check-input(type='checkbox', value='Agri')
-                  label.form-check-label(for='Checkbox1') Agri
-                .form-check
-                  input#Checkbox2.form-check-input(type='checkbox', value='Energy')
-                  label.form-check-label(for='Checkbox2') Energy
-                .form-check
-                  input#Checkbox3.form-check-input(type='checkbox', value='Finance')
-                  label.form-check-label(for='Checkbox3') Finance
-                .form-check
-                  input#Checkbox4.form-check-input(type='checkbox', value='Ecology')
-                  label.form-check-label(for='Checkbox4') Ecology
+                .custom-control.custom-checkbox.custom-checkbox-1
+                  input#customCheck1.custom-control-input(type='checkbox')
+                  label.custom-control-label(for='customCheck1') Agri
+                .custom-control.custom-checkbox.custom-checkbox-1
+                  input#customCheck2.custom-control-input(type='checkbox')
+                  label.custom-control-label(for='customCheck2') Energy
+                .custom-control.custom-checkbox.custom-checkbox-1
+                  input#customCheck3.custom-control-input(type='checkbox')
+                  label.custom-control-label(for='customCheck3') Finance
+                .custom-control.custom-checkbox.custom-checkbox-1
+                  input#customCheck4.custom-control-input(type='checkbox')
+                  label.custom-control-label(for='customCheck4') Ecology
+
+                //.form-check
+                //  input#Checkbox1.form-check-input(type='checkbox', value='Agri')
+                //  label.form-check-label(for='Checkbox1') Agri
+                //.form-check
+                //  input#Checkbox2.form-check-input(type='checkbox', value='Energy')
+                //  label.form-check-label(for='Checkbox2') Energy
+                //.form-check
+                //  input#Checkbox3.form-check-input(type='checkbox', value='Finance')
+                //  label.form-check-label(for='Checkbox3') Finance
+                //.form-check
+                //  input#Checkbox4.form-check-input(type='checkbox', value='Ecology')
+                //  label.form-check-label(for='Checkbox4') Ecology
 
           .content__inner
             .category-block
