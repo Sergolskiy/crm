@@ -76,6 +76,32 @@ $(document).ready(function () {
     $(this).parent().removeClass('active').prev().show();
   });
 
+  $('.post-article').click(function () {
+    var validate = true;
+
+    if($('.tab-pane.active input').val().length == 0){
+      validate = false;
+      $('.tab-pane.active input').closest('.tab-content').prev().find('.nav-link.active').addClass('novalid');
+      $('.tab-pane.active input').addClass('novalid');
+      // border: 1px solid #ff0000;
+    }
+    if($('.tab-pane.active textarea').val().length == 0){
+      $('.tab-pane.active textarea').closest('.tab-content').prev().find('.nav-link.active').addClass('novalid');
+      $('.tab-pane.active textarea').addClass('novalid');
+      validate = false;
+    }
+
+    $('.category-block').each(function () {
+      if($(this).find('.custom-control-input:checked').length == 0){
+        validate = false;
+      }
+    });
+
+    if(!validate){
+
+    }
+  });
+
 
   // var bLazy = new Blazy({
   //   src: 'data-blazy' // Default is data-src

@@ -16,9 +16,9 @@ block content
   div.main-wrap
     h1.page-title Статья
 
-    .content.container.article-page
+    .content.container
       .row
-        .col-md-8
+        .col-md-7
           .block-title.block-title--mb Заглавие
           ul.nav-type-1.nav.nav-tabs.d-flex.justify-content-end(role='tablist')
             li.nav-item(role='presentation')
@@ -27,7 +27,7 @@ block content
               a.nav-link(data-toggle='tab', href='#eng', role='tab', aria-controls='profile', aria-selected='false') Русский
           .tab-content
             #rus.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
-              input.form-control(type='text' name="head-eng" placeholder='Введите текст' value='Название ')
+              input.form-control(type='text' name="head-eng" placeholder='Введите текст')
             #eng.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
               input.form-control(type='text' name="head-rus" placeholder='Введите текст')
 
@@ -39,7 +39,7 @@ block content
               a.nav-link(data-toggle='tab', href='#eng2', role='tab', aria-controls='profile', aria-selected='false') Русский
           .tab-content
             #rus2.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
-              textarea.form-control(rows='6' name='text-eng' value="") In a tweet about Seattle demonstrations, President Trump renewed a threat to take action against local protesters.protesters. against local protesters.protesters.local protesters.p
+              textarea.form-control(rows='6' name='text-eng')
             #eng2.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
               textarea.form-control(rows='6' name='rus-eng')
 
@@ -72,7 +72,7 @@ block content
                   .selected-photo__item
                   a(href="javascript:void(0)").selected-photo__remove
 
-        .col-md-4
+        .col-md-5
           .remove-article
             a(href="#").remove-article__inner Удалить статью
           .content__inner.content__inner--noborder.mb-4
@@ -92,8 +92,8 @@ block content
                 span Эта публикация запланирована на:
                 span 21.06.2020 <br> 19:30
               .status-block__btn.d-flex.justify-content-between
-                a(href="#").btn.btn-secondary Запланировать
-                a(href="#").btn.btn-primary.post-article Опубликовать
+                a(href="#" data-toggle="modal" data-target=".sched-public-js").btn.btn-secondary Запланировать
+                a(href="./index1.html").btn.btn-primary.post-article Опубликовать
 
           .content__inner.content__inner--noborder.mb-4
             .category-block
