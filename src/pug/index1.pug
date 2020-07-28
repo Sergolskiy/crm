@@ -18,7 +18,7 @@ block content
 
     .content
       .content__inner
-        .content__top
+        .content__top.d-flex.align-items-center.justify-content-between
           .content__top-left
             .site-search
               form
@@ -29,124 +29,131 @@ block content
               span +
               | Добавить
         .content__main
-          table.table
-            thead
-              tr
-                th(scope='col') Дата
-                  span.calendar
-                th(scope='col') Заглавие
-                th(scope='col') Категории
-                th(scope='col') Push уведомления
-                th(scope='col') Статус
-                th(scope='col') Язык
-                th(scope='col') Действия
-            tbody
-              tr
-                td
-                  .table-date 10 Jul, 2020
-                  .table-time 11:03:22 AM
-                  .reminder(data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Запланировано на: <br> <span>21.06.2020 <br> 11:10 </span>") dsf
-                td Some articleцццццццццчцццccfgxxxаааааxhц...
-                td
-                  select.selectpicker
-                    option Corn
-                    option Soybeans
-                    option Oils
-                td
-                  .form-check
-                    input#defaultCheck1.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .form-check
-                    input#defaultCheck2.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .table-lang
-                    span.active RU
-                    span.active \
-                    span EN
-                td
-                  a(href="#").table-change
-                  a(href="#").table-remove
+          .table-wrap
+            table.table
+              thead
+                tr
+                  th(scope='col')
+                    .table__top-left.d-flex.align-items-center.justify-content-between.pr-3 Дата
+                      a(href="#").calendar
+                        include ../img/icons/calendar-b.svg
+                  th(scope='col')
+                    .table__top-center Заглавие
+                  th(scope='col')
+                    .table__top-center Категории
+                  th(scope='col')
+                    .table__top-center.table__small-txt Push уведомления
+                  th(scope='col')
+                    .table__top-center Статус
+                  th(scope='col')
+                    .table__top-center Язык
+                  th(scope='col')
+                    .table__top-right Действия
+              tbody
+                tr
+                  td
+                    .table-date 10 Jul, 2020
+                    .table-time 11:03:22 AM
+                    a.reminder(href="#" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Запланировано на: <br> <span>21.06.2020 <br> 11:10 </span>")
+                      include ../img/icons/remaider.svg
+                  td Some articleцццццццццчцццccfgxxxаааааxhц...
+                  td
+                    select.selectpicker
+                      option Corn
+                      option Soybeans
+                      option Oils
+                  td
+                    .form-check
+                      input#exampleRadios61.form-check-input(type='radio', name='exampleRadios1', value='option1', checked='')
+                      label.form-check-label(for='exampleRadios61')
+                  td
+                    .form-check
+                      input#exampleRadios51.form-check-input(type='radio', name='exampleRadios2', value='option1', checked='')
+                      label.form-check-label(for='exampleRadios51')
+                  td
+                    .table-lang
+                      span.active RU
+                      span.active \
+                      span EN
+                  td
+                    a(href="#").table-change
+                    a(href="#").table-remove
 
 
-              tr
-                td
-                  .table-date 10 Jul, 2020
-                  .table-time 11:03:22 AM
-                  .editing
-                td Some articleцццццццццчцццccfgxxxаааааxhц...
-                td
-                  select.selectpicker
-                    option Corn
-                    option Soybeans
-                    option Oils
-                td
-                  .form-check
-                    input#defaultCheck3.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .form-check
-                    input#defaultCheck4.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .table-lang
-                    span.active RU
-                    span.active \
-                    span EN
-                td
-                  a(href="#").table-change
-                  a(href="#").table-remove
+                tr
+                  td
+                    .table-date 10 Jul, 2020
+                    .table-time 11:03:22 AM
+                    a.editing(href="#" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования")
+                      include ../img/icons/edit.svg
+                  td Some articleцццццццццчцццccfgxxxаааааxhц...
+                  td
+                    select.selectpicker
+                      option Corn
+                      option Soybeans
+                      option Oils
+                  td
+                    .form-check
+                      input#exampleRadios41.form-check-input(type='radio', name='exampleRadios3', value='option1', checked='')
+                      label.form-check-label(for='exampleRadios41')
+                  td
+                    .form-check
+                      input#exampleRadios1.form-check-input(type='radio', name='exampleRadios4', value='option1', checked='')
+                      label.form-check-label(for='exampleRadios1')
+                  td
+                    .table-lang
+                      span.active RU
+                      span.active \
+                      span EN
+                  td
+                    a(href="#").table-change
+                    a(href="#").table-remove
 
 
-              tr.dibable-row
-                td(data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования") dsf
-                  .table-date 10 Jul, 2020
-                  .table-time 11:03:22 AM
-                  .editing
-                td Some articleцццццццццчцццccfgxxxаааааxhц...
-                td
-                  select.selectpicker
-                    option Corn
-                    option Soybeans
-                    option Oils
-                td
-                  .form-check
-                    input#defaultCheck5.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .form-check
-                    input#defaultCheck6.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .table-lang
-                    span.active RU
-                    span.active \
-                    span EN
-                td
-                  a(href="#").table-change
-                  a(href="#").table-remove
+                tr.dibable-row
+                  td
+                    .table-date 10 Jul, 2020
+                    .table-time 11:03:22 AM
+                    a.editing(href="#" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования")
+                      include ../img/icons/edit.svg
+                  td Some articleцццццццццчцццccfgxxxаааааxhц...
+                  td
+                    select.selectpicker
+                      option Corn
+                      option Soybeans
+                      option Oils
+                  td
+                    .form-check
+                      input#exampleRadios31.form-check-input(type='radio', name='exampleRadios5', value='option1', checked='')
+                      label.form-check-label(for='exampleRadios31')
+                  td
+                    .form-check
+                      input#exampleRadios21.form-check-input(type='radio', name='exampleRadios6', value='option1', checked='')
+                      label.form-check-label(for='exampleRadios21')
+                  td
+                    .table-lang
+                      span.active RU
+                      span.active \
+                      span EN
+                  td
+                    a(href="#").table-change
+                    a(href="#").table-remove
 
 
 
-    .pagination
-      .pagination__items
-        .pagination__item
-          a(href="#").pagination__link &#60;
-        .pagination__item
-          a(href="#").pagination__link 1
-        .pagination__item
-          a(href="#").pagination__link.active 2
-        .pagination__item
-          a(href="#").pagination__link 3
-        .pagination__item
-          a(href="#").pagination__link 4
-        .pagination__item
-          a(href="#").pagination__link >
+    nav(aria-label='Page navigation example')
+      ul.pagination
+        li.page-item
+          a.page-link(href='#', aria-label='Previous')
+            span(aria-hidden='true') «
+        li.page-item
+          a.page-link(href='#') 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#', aria-label='Next')
+            span(aria-hidden='true') »
+
 

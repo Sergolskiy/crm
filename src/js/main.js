@@ -38,7 +38,12 @@ $(document).ready(function () {
 
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
-  })
+  });
+
+  $('.has-submenu').click(function () {
+    $(this).toggleClass('active');
+    $(this).next().slideToggle();
+  });
 
   // var bLazy = new Blazy({
   //   src: 'data-blazy' // Default is data-src

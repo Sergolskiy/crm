@@ -9,11 +9,13 @@ $blacklight: #656073;
   box-sizing: border-box;
   font-family: "HelvericaNeueCyr";
   font-weight: 400;
+  color: #181D30;
 }
 
 .main-wrap{
   overflow: hidden;
   position: relative;
+  padding-top: 30px;
 
   //& > div {
   //  position: relative;
@@ -67,12 +69,8 @@ ul{
   list-style: none;
 }
 
-* {
-  box-sizing: border-box;
-}
 
 body{
-  color: #090909;
 }
 
 body.hidden{
@@ -82,10 +80,6 @@ body.hidden{
     position: fixed;
   }
 
-}
-
-a{
-  color: #090909;
 }
 
 .tablet{
@@ -127,6 +121,7 @@ input{
   overflow: hidden;
   position: relative;
   min-height: 100vh;
+  display: flex;
 }
 
 
@@ -231,13 +226,349 @@ input{
 
 
 
+.menu{
+  min-width: 270px;
+  width: 20%;
+  max-width: 300px;
+  background: #1A2327;
+
+  @include for-1400{
+    min-width: 20%;
+  }
+
+  &__inner{
+
+  }
+
+  &__top{
+    padding-top: 40px;
+  }
+
+  &__settings{
+    position: relative;
+  }
+
+  &__settings-link{
+    position: absolute;
+    top: -20px;
+    right: 15px;
+    width: 20px;
+    height: 22px;
+
+    svg path{
+      transition: 0.3s;
+    }
+
+    &:hover{
+      svg{
+        path:last-child{
+          fill: #2DA82D;
+        }
+      }
+    }
+  }
+
+  &__title{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.005em;
+    padding-left: 30px;
+  }
+
+  &__items{
+    margin-top: 40px;
+  }
+
+  &__item{
+
+  }
+
+  &__link{
+    color: #EDF0F6;
+    height: 48px;
+    transition: 0.3s;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.005em;
+    padding-left: 28px;
+    display: flex;
+    align-items: center;
+    border-left: 0 solid #072A4F;
 
 
+    &.active,
+    &:hover{
+      border-left: 4px solid #072A4F;
+      background: #151C1F;
+      color: #EDF0F6;
+    }
+  }
+
+}
+
+.submenu{
+  display: none;
+
+  &__item{
+
+  }
+
+  &__link{
+    color: #EDF0F6;
+    height: 48px;
+    transition: 0.3s;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.005em;
+    padding-left: 28px;
+    display: flex;
+    align-items: center;
+    border-left: 0 solid #072A4F;
+    border-left: 4px solid #072A4F;
+    background: #151C1F;
+
+    &:hover{
+      color: #EDF0F6;
+    }
+  }
+
+}
+
+.btn-primary{
+  background: #072A4F;
+  border-color: #072A4F;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.005em;
+  color: #FFFFFF;
+  padding: 11px 19px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active,
+  &:focus,
+  &:hover{
+    background: #0e355f;
+    border-color: #0e355f;
+    outline: 0;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  span{
+    color: white;
+    font-size: 24px;
+    line-height: 15px;
+    font-weight: bold;
+  }
+}
 
 
+.page__content{
+  width: 100%;
+}
+
+.page-title{
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.005em;
+  color: #181D30;
+  margin: 0;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+.content{
+  padding: 0 20px;
+
+  &__inner{
+    background: #FFFFFF;
+    border: 1px solid rgba(98, 92, 169, 0.25);
+    padding: 15px 15px 30px;
+  }
+
+  &__top{
+
+  }
+
+  &__top-left{
+
+  }
+
+  &__top-right{
+
+  }
+
+  &__main{
+    margin-top: 15px;
+  }
+
+}
+
+.site-search{
+
+  &__input{
+    position: relative;
+
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 50%;
+      margin-top: -5px;
+      left: 10px;
+      background: url("../img/icons/search.svg") center center no-repeat;
+    }
+
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      border-radius: 4px;
+      background: rgba(7, 42, 79, 0.2);
+    }
+
+    input{
+      border: 0;
+      padding-left: 30px;
+
+      &::placeholder{
+        color: rgba(23, 29, 48, 0.3);
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.005em;
+      }
+    }
+  }
+
+}
+
+.table-wrap{
+  //border: 1px solid rgba(7, 42, 79, 0.25);
+  //box-sizing: border-box;
+  //border-radius: 4px 4px 0 0;
+}
+
+.table{
+  thead{
+    tr{
+      background: #FFFFFF;
+      border: 0;
+
+      th{
+        border: 0;
+        padding: 0;
+
+        & > div{
+          margin-right: -1px;
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid rgba(7, 42, 79, 0.15);
+          font-weight: 900;
+          font-size: 16px;
+          line-height: 19px;
+          letter-spacing: 0.005em;
+          color: #171D30;
+        }
+        &:nth-child(-n+3) > div{
+          padding-left: 30px;
+        }
+        &:nth-child(n+4){
+          &>div{
+            justify-content: center;
+            text-align: center;
+          }
+        }
+      }
+    }
 
 
+  }
+  tbody{
+    tr{
+      td{
+        border: 1px solid rgba(7, 42, 79, 0.15);
+        border-top: 0;
+        position: relative;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+    }
+  }
 
+  &__top-left{
+    height: 60px;
+    border-top: 1px solid rgba(7, 42, 79, 0.25);
+    border-left: 1px solid rgba(7, 42, 79, 0.25);
+    border-right: 1px solid rgba(7, 42, 79, 0.15);
+    border-radius: 4px 0 0 0;
+  }
 
+  &__top-center{
+    height: 60px;
+    border-top: 1px solid rgba(7, 42, 79, 0.25);
+    border-right: 1px solid rgba(7, 42, 79, 0.15);
+  }
+
+  &__top-right{
+    height: 60px;
+    border-top: 1px solid rgba(7, 42, 79, 0.25);
+    border-right: 1px solid rgba(7, 42, 79, 0.25);
+    border-radius: 0 4px 0 0;
+  }
+
+  &__small-txt{
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.table-date{
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.005em;
+  color: #181D30;
+}
+
+.table-time{
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.005em;
+  color: rgba(24, 29, 48, 0.7);
+}
+
+.reminder{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.editing{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+
+  svg{
+    width: 10px;
+    height: 10px;
+
+    path{
+      fill-opacity: 1;
+    }
+  }
+}
 
 

@@ -1,0 +1,130 @@
+extends _layout
+
+block vars
+  - var pageTitle = "Home page";
+  - var pageClass = "";
+  - var pageActive = "homepage";
+
+block content
+  //.webp-img(data-webp="./img/Rectangle5.webp" data-img="./img/Rectangle5.jpg")
+
+    picture
+      source(srcset="./img/logo.webp" type="image/webp")
+      source(srcset="./img/logo.jpg" type="image/png")
+      img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img")
+
+  div.main-wrap
+    h1.page-title Запланированные
+
+    .content
+      .content__inner
+        .content__top
+          .content__top-left
+            .site-search
+              form
+                .site-search__input
+                  input(type="text" placeholder="Поиск ...")
+        .content__main
+          table.table
+            thead
+              tr
+                th(scope='col') Дата
+                  span.calendar
+                th(scope='col') Заглавие
+                th(scope='col') Категории
+                th(scope='col') Статус
+                th(scope='col') Язык
+                th(scope='col') Действия
+            tbody
+              tr
+                td
+                  .table-date 10 Jul, 2020
+                  .table-time 11:03:22 AM
+                  .reminder(data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Запланировано на: <br> <span>21.06.2020 <br> 11:10 </span>") dsf
+                td Some articleцццццццццчцццccfgxxxаааааxhц...
+                td
+                  select.selectpicker
+                    option Corn
+                    option Soybeans
+                    option Oils
+                td
+                  .form-check
+                    input#exampleRadios31.form-check-input(type='radio', name='exampleRadios1', value='option1', checked='')
+                    label.form-check-label(for='exampleRadios31')
+                td
+                  .table-lang
+                    span.active RU
+                    span.active \
+                    span EN
+                td
+                  a(href="#").table-change
+                  a(href="#").table-remove
+
+
+              tr
+                td
+                  .table-date 10 Jul, 2020
+                  .table-time 11:03:22 AM
+                  .editing
+                td Some articleцццццццццчцццccfgxxxаааааxhц...
+                td
+                  select.selectpicker
+                    option Corn
+                    option Soybeans
+                    option Oils
+                td
+                  .form-check
+                    input#exampleRadios21.form-check-input(type='radio', name='exampleRadios2', value='option1', checked='')
+                    label.form-check-label(for='exampleRadios21')
+                td
+                  .table-lang
+                    span.active RU
+                    span.active \
+                    span EN
+                td
+                  a(href="#").table-change
+                  a(href="#").table-remove
+
+
+              tr.dibable-row
+                td(data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования") dsf
+                  .table-date 10 Jul, 2020
+                  .table-time 11:03:22 AM
+                  .editing
+                td Some articleцццццццццчцццccfgxxxаааааxhц...
+                td
+                  select.selectpicker
+                    option Corn
+                    option Soybeans
+                    option Oils
+                td
+                  .form-check
+                    input#exampleRadios1.form-check-input(type='radio', name='exampleRadios3', value='option1', checked='')
+                    label.form-check-label(for='exampleRadios1')
+                td
+                  .table-lang
+                    span.active RU
+                    span.active \
+                    span EN
+                td
+                  a(href="#").table-change
+                  a(href="#").table-remove
+
+
+
+    nav(aria-label='Page navigation example')
+      ul.pagination
+        li.page-item
+          a.page-link(href='#', aria-label='Previous')
+            span(aria-hidden='true') «
+        li.page-item
+          a.page-link(href='#') 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#', aria-label='Next')
+            span(aria-hidden='true') »
+
+

@@ -14,139 +14,126 @@ block content
       img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img")
 
   div.main-wrap
-    h1.page-title Статьи
+    h1.page-title Статья
 
-    .content
-      .content__inner
-        .content__top
-          .content__top-left
-            .site-search
-              form
-                .site-search__input
-                  input(type="text" placeholder="Поиск ...")
-          .content__top-right
-            a.btn.btn-primary(href="#")
-              span +
-              | Добавить
-        .content__main
-          table.table
-            thead
-              tr
-                th(scope='col') Дата
-                  span.calendar
-                th(scope='col') Заглавие
-                th(scope='col') Категории
-                th(scope='col') Push уведомления
-                th(scope='col') Статус
-                th(scope='col') Язык
-                th(scope='col') Действия
-            tbody
-              tr
-                td
-                  .table-date 10 Jul, 2020
-                  .table-time 11:03:22 AM
-                  .reminder(data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Запланировано на: <br> <span>21.06.2020 <br> 11:10 </span>") dsf
-                td Some articleцццццццццчцццccfgxxxаааааxhц...
-                td
-                  select.selectpicker
-                    option Corn
-                    option Soybeans
-                    option Oils
-                td
-                  .form-check
-                    input#defaultCheck1.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .form-check
-                    input#defaultCheck2.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .table-lang
-                    span.active RU
-                    span.active \
-                    span EN
-                td
-                  a(href="#").table-change
-                  a(href="#").table-remove
+    .content.container
+      .row
+        .col-md-7
+          .block-title.block-title--mb Заглавие
+          ul.nav.nav-tabs(role='tablist')
+            li.nav-item(role='presentation')
+              a.nav-link.active(data-toggle='tab', href='#rus', role='tab', aria-controls='home', aria-selected='true') Home
+            li.nav-item(role='presentation')
+              a.nav-link(data-toggle='tab', href='#eng', role='tab', aria-controls='profile', aria-selected='false') Profile
+          .tab-content
+            #rus.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+              input.form-control(type='text' name="head-eng")
+            #eng.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
+              input.form-control(type='text' name="head-rus")
 
+          .block-title.block-title--mb Текст
+          ul.nav.nav-tabs(role='tablist')
+            li.nav-item(role='presentation')
+              a.nav-link.active(data-toggle='tab', href='#rus2', role='tab', aria-controls='home', aria-selected='true') Home
+            li.nav-item(role='presentation')
+              a.nav-link(data-toggle='tab', href='#eng2', role='tab', aria-controls='profile', aria-selected='false') Profile
+          .tab-content
+            #rus2.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+              textarea.form-control(rows='4' name='text-eng')
+            #eng2.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
+              textarea.form-control(rows='4' name='rus-eng')
 
-              tr
-                td
-                  .table-date 10 Jul, 2020
-                  .table-time 11:03:22 AM
-                  .editing
-                td Some articleцццццццццчцццccfgxxxаааааxhц...
-                td
-                  select.selectpicker
-                    option Corn
-                    option Soybeans
-                    option Oils
-                td
-                  .form-check
-                    input#defaultCheck3.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .form-check
-                    input#defaultCheck4.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .table-lang
-                    span.active RU
-                    span.active \
-                    span EN
-                td
-                  a(href="#").table-change
-                  a(href="#").table-remove
+          .block-title Фото
 
+          .photo-block
+            .photo-block__inner
+              .photo-block__item
+                a(href="#").photo-block__link
+                  span Добавить
+              .photo-block__item
+                a(href="#").photo-block__link
+                  span Добавить
+              .photo-block__item
+                a(href="#").photo-block__link
+                  span Добавить
 
-              tr.dibable-row
-                td(data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования") dsf
-                  .table-date 10 Jul, 2020
-                  .table-time 11:03:22 AM
-                  .editing
-                td Some articleцццццццццчцццccfgxxxаааааxhц...
-                td
-                  select.selectpicker
-                    option Corn
-                    option Soybeans
-                    option Oils
-                td
-                  .form-check
-                    input#defaultCheck5.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .form-check
-                    input#defaultCheck6.form-check-input(type='checkbox', value='')
-                    label.form-check-label(for='defaultCheck1')
-                      | Default checkbox
-                td
-                  .table-lang
-                    span.active RU
-                    span.active \
-                    span EN
-                td
-                  a(href="#").table-change
-                  a(href="#").table-remove
+        .col-md-5
+          a(href="#").remove-article Удалить статью
+          .content__inner
+            .status-block
+              .block-title Статус
+              .status-block__top.d-flex
+                span Выбрать:
+                .form-check
+                  input#Radios1.form-check-input(type='radio', name='Radios', value='option1', )
+                  label.form-check-label(for='Radios1')
+                    | Черновик
+                .form-check
+                  input#Radios2.form-check-input(type='radio', name='Radios', value='option2' checked='')
+                  label.form-check-label(for='Radios2')
+                    | Публикация
+              .status-block__txt.d-flex
+                span Эта публикация запланирована на:
+              .status-block__btn.d-flex.justify-content-between
+                a(href="#").btn.btn-secondary Запланировать
+                a(href="#").btn.btn-primary Опубликовать
+
+          .content__inner
+            .category-block
+              .block-title Категория
+              .category-block__checkboxes
+                .form-check
+                  input#Checkbox1.form-check-input(type='checkbox', value='Agri')
+                  label.form-check-label(for='Checkbox1') Agri
+                .form-check
+                  input#Checkbox2.form-check-input(type='checkbox', value='Energy')
+                  label.form-check-label(for='Checkbox2') Energy
+                .form-check
+                  input#Checkbox3.form-check-input(type='checkbox', value='Finance')
+                  label.form-check-label(for='Checkbox3') Finance
+                .form-check
+                  input#Checkbox4.form-check-input(type='checkbox', value='Ecology')
+                  label.form-check-label(for='Checkbox4') Ecology
+
+          .content__inner
+            .category-block
+              .block-title Подкатегория
+              .category-block__checkboxes
+                .form-check
+                  input#Checkbox11.form-check-input(type='checkbox', value='Weat')
+                  label.form-check-label(for='Checkbox11') Weat
+                .form-check
+                  input#Checkbox12.form-check-input(type='checkbox', value='soybeans')
+                  label.form-check-label(for='Checkbox12') Soybeans
+                .form-check
+                  input#Checkbox13.form-check-input(type='checkbox', value='Oils')
+                  label.form-check-label(for='Checkbox13') Oils
+                .form-check
+                  input#Checkbox14.form-check-input(type='checkbox', value='Cotton')
+                  label.form-check-label(for='Checkbox14') Cotton
+                .form-check
+                  input#Checkbox15.form-check-input(type='checkbox', value='Corn')
+                  label.form-check-label(for='Checkbox15') Corn
+                .form-check
+                  input#Checkbox16.form-check-input(type='checkbox', value='Niche')
+                  label.form-check-label(for='Checkbox16') Niche
 
 
 
-    .pagination
-      .pagination__items
-        .pagination__item
-          a(href="#").pagination__link &#60;
-        .pagination__item
-          a(href="#").pagination__link 1
-        .pagination__item
-          a(href="#").pagination__link.active 2
-        .pagination__item
-          a(href="#").pagination__link 3
-        .pagination__item
-          a(href="#").pagination__link 4
-        .pagination__item
-          a(href="#").pagination__link >
+
+    nav(aria-label='Page navigation example')
+      ul.pagination
+        li.page-item
+          a.page-link(href='#', aria-label='Previous')
+            span(aria-hidden='true') «
+        li.page-item
+          a.page-link(href='#') 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#', aria-label='Next')
+            span(aria-hidden='true') »
+
 

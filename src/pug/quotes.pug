@@ -1,0 +1,65 @@
+extends _layout
+
+block vars
+  - var pageTitle = "Home page";
+  - var pageClass = "";
+  - var pageActive = "homepage";
+
+block content
+  //.webp-img(data-webp="./img/Rectangle5.webp" data-img="./img/Rectangle5.jpg")
+
+    picture
+      source(srcset="./img/logo.webp" type="image/webp")
+      source(srcset="./img/logo.jpg" type="image/png")
+      img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img")
+
+  div.main-wrap
+    h1.page-title Котировки
+
+    .content
+      .content__inner
+        .content__top
+          .content__top-left
+            .site-search
+              form
+                .site-search__input
+                  input(type="text" placeholder="Поиск ...")
+          .content__top-right
+            a.btn.btn-primary(href="#")
+              span +
+              | Добавить
+        .content__main
+          table.table.quotes-table
+            thead
+              tr
+                th(scope='col') Symbol
+                th(scope='col') Contract Name
+                th(scope='col') Last
+                th(scope='col') Change
+                th(scope='col')
+            tbody
+              tr
+                td ZCU20
+                td Dexcom
+                td 346-4
+                td +6-6
+                td
+                  a(href="#").table-remove
+
+
+    nav(aria-label='Page navigation example')
+      ul.pagination
+        li.page-item
+          a.page-link(href='#', aria-label='Previous')
+            span(aria-hidden='true') «
+        li.page-item
+          a.page-link(href='#') 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#', aria-label='Next')
+            span(aria-hidden='true') »
+
+
