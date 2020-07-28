@@ -1439,7 +1439,7 @@ input{
 
   &__form-btn{
     margin-top: 80px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
   }
 
   .form-group{
@@ -1486,14 +1486,23 @@ input{
       color: rgba(235, 0, 41, 0.9);
       margin-top: 0;
     }
-    &.error-field .invalid-feedback{
-      display: block;
-    }
-
-    &.error-field label{
-      color: rgba(235, 0, 41, 0.9);
-    }
   }
+  .form-control.is-invalid, .was-validated .form-control:invalid,
+  .form-control.is-valid, .was-validated .form-control:valid{
+    background-image: none;
+  }
+
+  .form-control.is-valid:focus, .was-validated .form-control:valid:focus,
+  .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+
+  .was-validated .form-control:invalid~.invalid-feedback + label{
+      color: rgba(235, 0, 41, 0.9);
+  }
+
 
 
 }
