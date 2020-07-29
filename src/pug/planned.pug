@@ -30,8 +30,9 @@ block content
               tr
                 th(scope='col')
                   .table__top-left.d-flex.align-items-center.justify-content-between.pr-3 Дата
-                    a(href="#" data-toggle="modal" data-target=".sched-public-js").calendar
+                    a(href="#" ).calendar
                       include ../img/icons/calendar-b.svg
+                    input(type="text" class="datepicker" id="calendarDateFields").calendar-input.d-none
                 th(scope='col')
                   .table__top-center Заглавие
                 th(scope='col')

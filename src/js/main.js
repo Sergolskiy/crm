@@ -194,7 +194,31 @@ $(document).ready(function () {
     }
   });
 
+  $(document).on('click', '.calendar', function(e){
+    e.preventDefault();
+    $('.calendar-input').click();
+  });
 
+
+  $(document).on('click', '.sched-public-js .btn-ok', function(e){
+    e.preventDefault();
+    var inputs = $(this).closest('form').find('.sched-public__input > input');
+    inputs.each(function(){
+      if($(this).val().length === 0){
+        $(this).parent().removeClass('correct-field');
+        $(this).parent().addClass('error-field');
+      } else {
+        $(this).parent().removeClass('error-field');
+        $(this).parent().addClass('correct-field');
+      }
+    });
+    if($(this).closest('form').find('.correct-field').length > 0 && $(this).closest('form').find('.error-field').length == 0){
+      $(this).closest('form').addClass('correct-fields');
+      $(this).siblings('[data-dismiss]').click();
+    } else {
+      $(this).closest('form').removeClass('correct-fields');
+    }
+  });
 
 });
 
