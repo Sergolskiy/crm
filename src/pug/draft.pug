@@ -81,18 +81,18 @@ block content
               .status-block__top.d-flex
                 span Выбрать:
                 .form-check.custom-control.custom-radio
-                  input#exampleRadios21.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='option1', checked='')
+                  input#exampleRadios21.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='draft', checked='')
                   label.form-check-label.custom-control-label(for='exampleRadios21')
                     | Черновик
                 .form-check.custom-control.custom-radio
-                  input#exampleRadios61.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='option1', checked='')
+                  input#exampleRadios61.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='published')
                   label.form-check-label.custom-control-label(for='exampleRadios61')
                     | Публикация
-              .status-block__txt.d-flex
+              .status-block__txt.status-block__planned
                 span Эта публикация запланирована на:
                 span 21.06.2020 <br> 19:30
               .status-block__btn.d-flex.justify-content-between
-                a(href="#").btn.btn-secondary Запланировать
+                a(href="#" data-toggle="modal" data-target=".sched-public-js").btn.btn-secondary Запланировать
                 a(href="#" data-toggle="modal" data-target=".alert-today-js").btn.btn-primary.post-article Сохранить
 
           .content__inner.content__inner--noborder.mb-4

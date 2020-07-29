@@ -883,17 +883,18 @@ textarea{
           }
         }
 
-        &:nth-child(3){
-          width: 13%;
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(7){
+          width: 1%;
         }
 
         &:nth-child(n+4){
           text-align: center;
         }
 
-        &:last-child{
-          width: 9%;
-        }
       }
     }
   }
@@ -937,6 +938,41 @@ textarea{
 
   .custom-radio .custom-control-input~.custom-control-label::after{
     top: 6px;
+  }
+}
+
+
+.table.quotes-table{
+  & thead > tr {
+    th{
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        width: 15%;
+        padding-left: 50px;
+        text-align: left;
+      }
+      &:nth-child(5){
+        width: 1%;
+      }
+    }
+  }
+  & tbody > tr {
+    td {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4){
+        width: 15%;
+        padding-left: 50px;
+        text-align: left;
+      }
+
+      &:nth-child(5){
+        width: 1%;
+      }
+    }
   }
 }
 
@@ -1214,6 +1250,14 @@ textarea{
       &:first-child{
         max-width: 160px;
       }
+    }
+  }
+
+  &__planned{
+    display: none;
+
+    &.active{
+      display: flex;
     }
   }
 
@@ -1997,4 +2041,26 @@ textarea{
 
 .category-block__checkboxes--subcategory{
   display: none;
+}
+
+.shaker{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }

@@ -127,12 +127,13 @@ $(document).ready(function () {
     });
   });
 
-  $('.login-page__show-pass').click(function () {
-    var type = $(this).prev().attr('type');
+  $('.login-page__show-pass').click(function (e) {
+    e.preventDefault();
+    var type = $(this).siblings('input').attr('type');
     if(type == 'password'){
-      $(this).prev().attr('type', 'text');
+      $(this).siblings().attr('type', 'text');
     } else {
-      $(this).prev().attr('type', 'password');
+      $(this).siblings().attr('type', 'password');
     }
   });
 
@@ -141,6 +142,15 @@ $(document).ready(function () {
     if($(this).closest('form').find(':invalid').length === 0){
       e.preventDefault();
       location.href = './index1.html'
+    } else {
+      $(this).closest('form').find(':invalid').each(function () {
+        var that = $(this);
+        $(this).parent().addClass('shaker');
+
+        setTimeout(function () {
+          that.removeClass('shaker');
+        }, 1000)
+      })
     }
   });
 
@@ -155,6 +165,14 @@ $(document).ready(function () {
     setTimeout(function () {
       $('body').removeClass('settings-hover');
     }, 500);
+  });
+
+  $('.status-block__top input').click(function () {
+    if($(this).val() === 'draft'){
+      $('.status-block__planned').removeClass('active');
+    } else {
+      $('.status-block__planned').addClass('active');
+    }
   });
 
   // var bLazy = new Blazy({
