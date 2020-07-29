@@ -170,10 +170,23 @@ $(document).ready(function () {
   $('.status-block__top input').click(function () {
     if($(this).val() === 'draft'){
       $('.status-block__planned').removeClass('active');
+      $('.status-block__btn').last().addClass('active');
+      $('.status-block__btn').first().removeClass('active');
     } else {
       $('.status-block__planned').addClass('active');
+      $('.status-block__btn').last().removeClass('active');
+      $('.status-block__btn').first().addClass('active');
     }
   });
+
+  $(document).on('mousedown', '.table .custom-control-label', function (e) {
+    e.preventDefault();
+    console.log($(this).prev());
+    console.log(213);
+    // if($(this).prop('checked')){
+    //   $(this).prop('checked', false);
+    // }
+  })
 
   // var bLazy = new Blazy({
   //   src: 'data-blazy' // Default is data-src

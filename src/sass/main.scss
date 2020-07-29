@@ -684,8 +684,15 @@ input{
 }
 
 .dibable-row{
-  pointer-events: none;
   opacity: 0.5;
+
+  td{
+    pointer-events: none;
+
+    &:last-child{
+      pointer-events: initial;
+    }
+  }
 }
 
 textarea{
@@ -722,7 +729,7 @@ textarea{
   color: #181D30;
   margin: 0;
   padding-left: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .content{
@@ -927,9 +934,9 @@ textarea{
 
   .custom-radio{
 
-    input, label{
-      pointer-events: none;
-    }
+    //input, label{
+    //  //pointer-events: none;
+    //}
   }
 
   .custom-radio .custom-control-input~.custom-control-label::before {
@@ -1198,7 +1205,7 @@ textarea{
     margin-top: 30px;
     margin-bottom: 40px;
 
-    span{
+    span:first-child{
       margin-right: 30px;
 
       @include for-1200{
@@ -1208,13 +1215,28 @@ textarea{
 
     .custom-radio{
       margin-right: 10px;
+      padding-left: 0;
+
+      span{
+        margin-left: 10px;
+      }
     }
 
+
+    .custom-radio .custom-control-input~.custom-control-label {
+      width: 16px;
+      height: 16px;
+      top: 3px;
+
+
+    }
 
     .custom-radio .custom-control-input~.custom-control-label::before {
       background-color: transparent;
       width: 16px;
       height: 16px;
+      top: 0;
+      left: 0;
     }
 
     .custom-radio .custom-control-input~.custom-control-label::after{
@@ -1230,8 +1252,8 @@ textarea{
     .custom-radio .custom-control-input:checked~.custom-control-label::after {
       width: 10px;
       height: 10px;
-      top: 7px;
-      left: -21px;
+      top: 3px;
+      left: 3px;
       background: #072A4F;
       display: block;
     }
@@ -1262,7 +1284,15 @@ textarea{
   }
 
   &__btn{
+    display: none;
 
+    &.active{
+      display: flex;
+    }
+
+    .btn{
+      min-width: 160px;
+    }
   }
 
 }

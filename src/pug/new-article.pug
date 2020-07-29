@@ -14,11 +14,11 @@ block content
       img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img")
 
   div.main-wrap
-    h1.page-title Статья
+    h1.page-title Черновик
 
-    .content.container
+    .content.container.article-page
       .row
-        .col-md-7
+        .col-md-8
           .block-title.block-title--mb Заглавие
           ul.nav-type-1.nav.nav-tabs.d-flex.justify-content-end(role='tablist')
             li.nav-item(role='presentation')
@@ -74,9 +74,7 @@ block content
                   .selected-photo__item
                   a(href="javascript:void(0)").selected-photo__remove
 
-        .col-md-5
-          .remove-article
-            a(href="#" data-toggle="modal" data-target=".remove-note-js").remove-article__inner Удалить статью
+        .col-md-4
           .content__inner.content__inner--noborder.mb-4
             .status-block
               .block-title Статус
@@ -85,58 +83,47 @@ block content
                 .form-check.custom-control.custom-radio
                   input#exampleRadios21.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='draft', checked='')
                   label.form-check-label.custom-control-label(for='exampleRadios21')
-                    | Черновик
+                  span Черновик
+
                 .form-check.custom-control.custom-radio
                   input#exampleRadios61.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='published')
                   label.form-check-label.custom-control-label(for='exampleRadios61')
-                    | Публикация
+                  span Публикация
               .status-block__txt.status-block__planned
                 span Эта публикация запланирована на:
                 span 21.06.2020 <br> 19:30
-              .status-block__btn.d-flex.justify-content-between
+              .status-block__btn.justify-content-between
                 a(href="#" data-toggle="modal" data-target=".sched-public-js").btn.btn-secondary Запланировать
-                a(href="./index1.html").btn.btn-primary.post-article Опубликовать
+                a(href="./article.html" ).btn.btn-primary.post-article Опубликовать
+              .status-block__btn.justify-content-between.active
+                a(href="#" data-toggle="modal" data-target=".remove-note-js").btn.btn-secondary Удалить
+                a(href="./drafts.html" ).btn.btn-primary.post-article Сохранить
 
-          .content__inner.content__inner--noborder.mb-4
+          .content__inner.content__inner--noborder.mb-4.category-block__checkboxes--category
             .category-block
               .block-title Категория
               .category-block__checkboxes
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck1.custom-control-input(type='checkbox')
+                  input#customCheck1.custom-control-input(type='checkbox' data-subcategory="agri")
                   label.custom-control-label(for='customCheck1') Agri
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck2.custom-control-input(type='checkbox')
+                  input#customCheck2.custom-control-input(type='checkbox' )
                   label.custom-control-label(for='customCheck2') Energy
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck3.custom-control-input(type='checkbox')
                   label.custom-control-label(for='customCheck3') Finance
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck4.custom-control-input(type='checkbox')
+                  input#customCheck4.custom-control-input(type='checkbox' data-subcategory="agri")
                   label.custom-control-label(for='customCheck4') Ecology
-                .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck5.custom-control-input(type='checkbox')
-                  label.custom-control-label(for='customCheck5') Ecology
 
-                //.form-check
-                //  input#Checkbox1.form-check-input(type='checkbox', value='Agri')
-                //  label.form-check-label(for='Checkbox1') Agri
-                //.form-check
-                //  input#Checkbox2.form-check-input(type='checkbox', value='Energy')
-                //  label.form-check-label(for='Checkbox2') Energy
-                //.form-check
-                //  input#Checkbox3.form-check-input(type='checkbox', value='Finance')
-                //  label.form-check-label(for='Checkbox3') Finance
-                //.form-check
-                //  input#Checkbox4.form-check-input(type='checkbox', value='Ecology')
-                //  label.form-check-label(for='Checkbox4') Ecology
 
-          .content__inner.content__inner--noborder
+          .content__inner.content__inner--noborder.category-block__checkboxes--subcategory.agri
             .category-block
               .block-title Подкатегория
               .category-block__checkboxes
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck5.custom-control-input(type='checkbox')
-                  label.custom-control-label(for='customCheck5') Weat
+                  label.custom-control-label(for='customCheck5') Wheat
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck6.custom-control-input(type='checkbox')
                   label.custom-control-label(for='customCheck6') Soybeans
@@ -156,41 +143,9 @@ block content
                   input#customCheck11.custom-control-input(type='checkbox')
                   label.custom-control-label(for='customCheck11') Niche
 
-                //.form-check
-                //  input#Checkbox11.form-check-input(type='checkbox', value='Weat')
-                //  label.form-check-label(for='Checkbox11') Weat
-                //.form-check
-                //  input#Checkbox12.form-check-input(type='checkbox', value='soybeans')
-                //  label.form-check-label(for='Checkbox12') Soybeans
-                //.form-check
-                //  input#Checkbox13.form-check-input(type='checkbox', value='Oils')
-                //  label.form-check-label(for='Checkbox13') Oils
-                //.form-check
-                //  input#Checkbox14.form-check-input(type='checkbox', value='Cotton')
-                //  label.form-check-label(for='Checkbox14') Cotton
-                //.form-check
-                //  input#Checkbox15.form-check-input(type='checkbox', value='Corn')
-                //  label.form-check-label(for='Checkbox15') Corn
-                //.form-check
-                //  input#Checkbox16.form-check-input(type='checkbox', value='Niche')
-                //  label.form-check-label(for='Checkbox16') Niche
 
 
 
 
-    nav(aria-label='Page navigation example')
-      ul.pagination
-        li.page-item
-          a.page-link(href='#', aria-label='Previous')
-            span(aria-hidden='true') «
-        li.page-item
-          a.page-link(href='#') 1
-        li.page-item
-          a.page-link(href='#') 2
-        li.page-item
-          a.page-link(href='#') 3
-        li.page-item
-          a.page-link(href='#', aria-label='Next')
-            span(aria-hidden='true') »
 
 
