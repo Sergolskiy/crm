@@ -1,8 +1,8 @@
 aside.menu
   .menu__inner
     .menu__top
-      .menu__settings
-        a(href="#" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="Сменить пароль").menu__settings-link
+      .menu__settings(data-toggle="modal" data-target=".change-pass-js")
+        a(href="#" data-toggle="tooltip" data-placement="bottom" data-html="true" data-original-title="Сменить пароль" ).menu__settings-link
           include ../../img/icons/settings.svg
       .menu__title Администратор
     .menu__items
