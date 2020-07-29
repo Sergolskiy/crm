@@ -76,14 +76,14 @@ $(document).ready(function () {
     $(this).parent().removeClass('active').prev().show();
   });
 
-  $('.post-article').click(function () {
+  $('.post-article').click(function (e) {
     var validate = true;
 
     if($('.tab-pane.active input').val().length == 0){
       validate = false;
       $('.tab-pane.active input').closest('.tab-content').prev().find('.nav-link.active').addClass('novalid');
       $('.tab-pane.active input').addClass('novalid');
-      // border: 1px solid #ff0000;
+      //
     }
     if($('.tab-pane.active textarea').val().length == 0){
       $('.tab-pane.active textarea').closest('.tab-content').prev().find('.nav-link.active').addClass('novalid');
@@ -93,12 +93,52 @@ $(document).ready(function () {
 
     $('.category-block').each(function () {
       if($(this).find('.custom-control-input:checked').length == 0){
+        $(this).find('.category-block__checkboxes').addClass('novalid-category');
         validate = false;
       }
     });
 
     if(!validate){
+      e.preventDefault();
+    }
+  });
 
+  $(document).on('click', '.form-control.novalid', function () {
+    $(this).removeClass('novalid');
+    $(this).closest('.tab-content').prev().find('.nav-link.novalid').removeClass('novalid');
+  });
+
+  $(document).on('change', '.category-block__checkboxes.novalid-category input[type="checkbox"]', function () {
+    $(this).closest('.novalid-category').removeClass('novalid-category');
+  });
+
+  $('.textarea-length').each(function () {
+    var span = $(this);
+    var spanLength = parseInt(span.attr('data-length'));
+
+
+    $(this).prev().keyup(function () {
+      if($(this).val().length <= spanLength){
+        span.html($(this).val().length + '/' + spanLength);
+      } else {
+        $(this).val($(this).val().substring(0, $(this).val().length - 1));
+      }
+
+    });
+  });
+
+  $('.login-page__show-pass').click(function () {
+    var type = $(this).prev().attr('type');
+    if(type == 'password'){
+      $(this).prev().attr('type', 'text');
+    } else {
+      $(this).prev().attr('type', 'password');
+    }
+  });
+
+  $('.login-page__btn').click(function () {
+    if($(this).closest('form').find(':invalid').length === 0){
+      location.href = './index1.html'
     }
   });
 

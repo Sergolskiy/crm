@@ -14,105 +14,219 @@ block content
       img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img")
 
   div.main-wrap
-    h1.page-title Запланированные
+    h1.page-title Черновии
 
     .content
       .content__inner
-        .content__top
+        .content__top.d-flex.align-items-center.justify-content-between
           .content__top-left
             .site-search
               form
                 .site-search__input
                   input(type="text" placeholder="Поиск ...")
           .content__top-right
-            a.btn.btn-primary(href="#")
+            a.btn.btn-primary(href="./new-article.html")
               span +
               | Добавить
         .content__main
           table.table
             thead
               tr
-                th(scope='col') Дата
-                  span.calendar
-                th(scope='col') Заглавие
-                th(scope='col') Категории
-                th(scope='col') Статус
-                th(scope='col') Язык
-                th(scope='col') Действия
+                th(scope='col')
+                  .table__top-left.d-flex.align-items-center.justify-content-between.pr-3 Дата
+                    a(href="#" data-toggle="modal" data-target=".sched-public-js").calendar
+                      include ../img/icons/calendar-b.svg
+                th(scope='col')
+                  .table__top-center Заглавие
+                th(scope='col')
+                  .table__top-center Категории
+                th(scope='col')
+                  .table__top-center Статус
+                th(scope='col')
+                  .table__top-center Язык
+                th(scope='col')
+                  .table__top-right Действия
             tbody
               tr
                 td
                   .table-date 10 Jul, 2020
                   .table-time 11:03:22 AM
-                  .reminder(data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Запланировано на: <br> <span>21.06.2020 <br> 11:10 </span>") dsf
-                td Some articleцццццццццчцццccfgxxxаааааxhц...
+                  a.reminder(href="#" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Запланировано на: <br> <span>21.06.2020 <br> 11:10 </span>")
+                    include ../img/icons/remaider.svg
+                td
+                  div Some articleцццццц цццчцццccfgxxxаааааxhц...
                 td
                   select.selectpicker
                     option Corn
                     option Soybeans
                     option Oils
                 td
-                  .form-check
-                    input#exampleRadios31.form-check-input(type='radio', name='exampleRadios1', value='option1', checked='')
-                    label.form-check-label(for='exampleRadios31')
+                  .form-check.custom-control.custom-radio
+                    input#exampleRadios61.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='option1', checked='')
+                    label.form-check-label.custom-control-label(for='exampleRadios61')
+
                 td
                   .table-lang
                     span.active RU
                     span.active \
                     span EN
                 td
-                  a(href="#").table-change
-                  a(href="#").table-remove
+                  .d-flex.justify-content-around
+                    a(href="./draft.html").table-change
+                      include ../img/icons/edit.svg
+                    a(href="#").table-remove
+                      include ../img/icons/remove.svg
 
 
               tr
                 td
                   .table-date 10 Jul, 2020
                   .table-time 11:03:22 AM
-                  .editing
-                td Some articleцццццццццчцццccfgxxxаааааxhц...
+                  a.editing(href="#" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования")
+                    include ../img/icons/edit.svg
+                td Some articleцццццццццчцц цccfgxxxаааааxhц...
                 td
                   select.selectpicker
                     option Corn
                     option Soybeans
                     option Oils
                 td
-                  .form-check
-                    input#exampleRadios21.form-check-input(type='radio', name='exampleRadios2', value='option1', checked='')
-                    label.form-check-label(for='exampleRadios21')
+                  .form-check.custom-control.custom-radio
+                    input#exampleRadios41.form-check-input.custom-control-input(type='radio', name='exampleRadios3', value='option1')
+                    label.form-check-label.custom-control-label(for='exampleRadios41')
+
                 td
                   .table-lang
                     span.active RU
                     span.active \
                     span EN
                 td
-                  a(href="#").table-change
-                  a(href="#").table-remove
+                  .d-flex.justify-content-around
+                    a(href="./draft.html").table-change
+                      include ../img/icons/edit.svg
+                    a(href="#").table-remove
+                      include ../img/icons/remove.svg
 
 
               tr.dibable-row
-                td(data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования") dsf
+                td
                   .table-date 10 Jul, 2020
                   .table-time 11:03:22 AM
-                  .editing
-                td Some articleцццццццццчцццccfgxxxаааааxhц...
+                  a.editing(href="#" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования")
+                    include ../img/icons/edit.svg
+                td Some articleццццццццц чцццccfgxxxаааааxhц...
                 td
                   select.selectpicker
                     option Corn
                     option Soybeans
                     option Oils
+
                 td
-                  .form-check
-                    input#exampleRadios1.form-check-input(type='radio', name='exampleRadios3', value='option1', checked='')
-                    label.form-check-label(for='exampleRadios1')
+                  .form-check.custom-control.custom-radio
+                    input#exampleRadios21.form-check-input.custom-control-input(type='radio', name='exampleRadios6', value='option1', checked='')
+                    label.form-check-label.custom-control-label(for='exampleRadios21')
                 td
                   .table-lang
                     span.active RU
                     span.active \
                     span EN
                 td
-                  a(href="#").table-change
-                  a(href="#").table-remove
+                  .d-flex.justify-content-around
+                    a(href="./draft.html").table-change
+                      include ../img/icons/edit.svg
+                    a(href="#").table-remove
+                      include ../img/icons/remove.svg
+
+
+              tr
+                td
+                  .table-date 10 Jul, 2020
+                  .table-time 11:03:22 AM
+                  a.reminder(href="#" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Запланировано на: <br> <span>21.06.2020 <br> 11:10 </span>")
+                    include ../img/icons/remaider.svg
+                td
+                  div Some articleцццццц цццчцццccfgxxxаааааxhц...
+                td
+                  select.selectpicker
+                    option Corn
+                    option Soybeans
+                    option Oils
+                td
+                  .form-check.custom-control.custom-radio
+                    input#exampleRadios761.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='option1', checked='')
+                    label.form-check-label.custom-control-label(for='exampleRadios761')
+
+                td
+                  .table-lang
+                    span.active RU
+                    span.active \
+                    span EN
+                td
+                  .d-flex.justify-content-around
+                    a(href="./draft.html").table-change
+                      include ../img/icons/edit.svg
+                    a(href="#").table-remove
+                      include ../img/icons/remove.svg
+
+
+              tr
+                td
+                  .table-date 10 Jul, 2020
+                  .table-time 11:03:22 AM
+                  a.editing(href="#" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования")
+                    include ../img/icons/edit.svg
+                td Some articleцццццццццчцц цccfgxxxаааааxhц...
+                td
+                  select.selectpicker
+                    option Corn
+                    option Soybeans
+                    option Oils
+                td
+                  .form-check.custom-control.custom-radio
+                    input#exampleRadios741.form-check-input.custom-control-input(type='radio', name='exampleRadios3', value='option1')
+                    label.form-check-label.custom-control-label(for='exampleRadios741')
+
+                td
+                  .table-lang
+                    span.active RU
+                    span.active \
+                    span EN
+                td
+                  .d-flex.justify-content-around
+                    a(href="./draft.html").table-change
+                      include ../img/icons/edit.svg
+                    a(href="#").table-remove
+                      include ../img/icons/remove.svg
+
+
+              tr.dibable-row
+                td
+                  .table-date 10 Jul, 2020
+                  .table-time 11:03:22 AM
+                  a.editing(href="#" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Статья находится на <br> этапе редактирования")
+                    include ../img/icons/edit.svg
+                td Some articleццццццццц чцццccfgxxxаааааxhц...
+                td
+                  select.selectpicker
+                    option Corn
+                    option Soybeans
+                    option Oils
+                td
+                  .form-check.custom-control.custom-radio
+                    input#exampleRadios731.form-check-input.custom-control-input(type='radio', name='exampleRadios5', value='option1', checked='')
+                    label.form-check-label.custom-control-label(for='exampleRadios731')
+
+                td
+                  .table-lang
+                    span.active RU
+                    span.active \
+                    span EN
+                td
+                  .d-flex.justify-content-around
+                    a(href="./draft.html").table-change
+                      include ../img/icons/edit.svg
+                    a(href="#").table-remove
+                      include ../img/icons/remove.svg
 
 
 

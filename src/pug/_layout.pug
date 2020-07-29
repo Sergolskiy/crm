@@ -24,9 +24,10 @@ html(lang="ru")
 
 	body(class="page " + pageClass)
 		.page__wrapper
-			include modules/_header
+			if !pageStart
+				include modules/_header
 
-			main.page__content
+			main(class="page__content " + pageStart)
 				block content
 
 			include modules/_footer

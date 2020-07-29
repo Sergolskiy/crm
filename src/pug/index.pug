@@ -4,6 +4,7 @@ block vars
   - var pageTitle = "Nav page";
   - var pageClass = "";
   - var pageActive = "Navepage";
+  - var pageStart = "main-page";
 
 block content
   //.webp-img(data-webp="./img/Rectangle5.webp" data-img="./img/Rectangle5.jpg")
@@ -14,10 +15,31 @@ block content
       img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img")
 
   div.main-wrap
-    div.prevpage(style="margin: 0 auto; height: 500px; display: flex; justify-content: center; color: black; flex-direction: column; align-items: center;")
-      div
-        a(href="./index1.html" target="_blank" style="font-size: 18px;") home
-      //div
-      //  a(href="./quotes.html" target="_blank" style="font-size: 18px;") quotes
+    //div.prevpage(style="margin: 0 auto; height: 500px; display: flex; justify-content: center; color: black; flex-direction: column; align-items: center;")
+    //  div
+    //    a(href="./index1.html" target="_blank" style="font-size: 18px;") home
+    //  //div
+    //  //  a(href="./quotes.html" target="_blank" style="font-size: 18px;") quotes
+    .login-page
+      .login-page__img
+        include ../img/logo.svg
+      .login-page__form
+        form(novalidate).needs-validation
+          .form-group
+            input(type="text" id="login" required )
+            .invalid-feedback Введен неверный пароль
+            label(for="login") Введите email или логин
+          .form-group
+            input(type="password" id="pass" required )
+            .invalid-feedback Введен неверный пароль
+            label(for="pass") Ваш пароль
+            a(href="#").login-page__show-pass
+              include ../img/icons/show.svg
+
+          button(type='submit').login-page__btn Войти
+          a(href='#').login-page__forgot Забыли пароль?
+
+
+
 
 
