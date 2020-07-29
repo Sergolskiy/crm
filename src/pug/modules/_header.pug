@@ -7,14 +7,14 @@ aside.menu
       .menu__title Администратор
     .menu__items
       .menu__item
-        a(href="./index1.html").menu__link.active Статьи
+        a(href="./index1.html" class=(pageActive === "homepage" ? "menu__link active" : 'menu__link')) Статьи
       .menu__item
-        a(href="./drafts.html").menu__link Черновики
+        a(href="./drafts.html" class=(pageActive === "drafts" ? "menu__link active" : 'menu__link')) Черновики
       .menu__item
-        a(href="./planned.html").menu__link Запланированные
+        a(href="./planned.html" class=(pageActive === "planned" ? "menu__link active" : 'menu__link')) Запланированные
       .menu__item
-        a(href="#").menu__link.has-submenu Котировки
-        .submenu
+        a(href="#" class=(pageActive === "quotes" ? "menu__link has-submenu active" : 'menu__link has-submenu')) Котировки
+        .submenu(style=(pageActive === "quotes" ? "display: block;" : 'display: none;'))
           .submenu__item
             a(href="./quotes.html").submenu__link Agri
           .submenu__item
