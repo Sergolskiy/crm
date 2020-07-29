@@ -242,7 +242,7 @@ $(document).ready(function () {
   $(document).on('focus' , '.form-group input' , function(e) {
       $(this).siblings('label').addClass('show');
   });
-  $(document).on('mouseleave' , '.form-group input' , function(e) {
+  $(document).on('focusout' , '.form-group input' , function(e) {
     if($(this).val().length === 0){
       $(this).siblings('label').removeClass('show');
     }
