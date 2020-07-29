@@ -839,6 +839,11 @@ textarea{
             text-align: center;
           }
         }
+        &:nth-child(4){
+          &>div{
+            font-size: 14px;
+          }
+        }
       }
     }
 
@@ -917,6 +922,21 @@ textarea{
   &__small-txt{
     font-size: 14px;
     line-height: 16px;
+  }
+
+  .custom-radio{
+
+    input, label{
+      pointer-events: none;
+    }
+  }
+
+  .custom-radio .custom-control-input~.custom-control-label::before {
+    top: 2px;
+  }
+
+  .custom-radio .custom-control-input~.custom-control-label::after{
+    top: 6px;
   }
 }
 
