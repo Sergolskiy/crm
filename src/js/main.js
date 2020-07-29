@@ -274,6 +274,20 @@ $(document).ready(function () {
     }
   });
 
+  $('.category-block__checkboxes--category .custom-checkbox input').click(function(e){
+      $(this).closest('.category-block__checkboxes--category').find('.custom-checkbox input').prop( "checked", false);
+      $(this).prop( "checked", true );
+      var categoryName = $(this).attr('data-subcategory');
+
+      $('.category-block__checkboxes--subcategory').hide();
+      $(".category-block__checkboxes--subcategory." + categoryName).show();
+  });
+
+  $('.category-block__checkboxes--subcategory .custom-checkbox input').click(function(e) {
+    $(this).closest('.category-block__checkboxes--subcategory').find('.custom-checkbox input').prop("checked", false);
+    $(this).prop("checked", true);
+  });
+
 });
 
 (function() {

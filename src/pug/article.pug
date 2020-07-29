@@ -97,15 +97,15 @@ block content
                 a(href="#").btn.btn-secondary Запланировать
                 a(href="#").btn.btn-primary.post-article Опубликовать
 
-          .content__inner.content__inner--noborder.mb-4
+          .content__inner.content__inner--noborder.mb-4.category-block__checkboxes--category
             .category-block
               .block-title Категория
               .category-block__checkboxes
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck1.custom-control-input(type='checkbox')
+                  input#customCheck1.custom-control-input(type='checkbox' data-subcategory="agri")
                   label.custom-control-label(for='customCheck1') Agri
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck2.custom-control-input(type='checkbox')
+                  input#customCheck2.custom-control-input(type='checkbox' data-subcategory="agri")
                   label.custom-control-label(for='customCheck2') Energy
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck3.custom-control-input(type='checkbox')
@@ -115,7 +115,7 @@ block content
                   label.custom-control-label(for='customCheck4') Ecology
 
 
-          .content__inner.content__inner--noborder
+          .content__inner.content__inner--noborder.category-block__checkboxes--subcategory.agri
             .category-block
               .block-title Подкатегория
               .category-block__checkboxes
