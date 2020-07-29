@@ -137,8 +137,9 @@ $(document).ready(function () {
   });
 
   $('.login-page__btn').click(function (e) {
-    e.preventDefault();
+
     if($(this).closest('form').find(':invalid').length === 0){
+      e.preventDefault();
       location.href = './index1.html'
     }
   });

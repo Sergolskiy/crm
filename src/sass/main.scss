@@ -257,7 +257,7 @@ input{
     top: -20px;
     right: 15px;
     width: 20px;
-    height: 22px;
+    height: 24px;
     display: flex;
 
     svg path{
@@ -760,6 +760,8 @@ textarea{
 
   &__input{
     position: relative;
+
+    width: 317px;
 
     &:before{
       content: "";
