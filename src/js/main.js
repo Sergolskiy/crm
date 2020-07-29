@@ -149,7 +149,8 @@ $(document).ready(function () {
     $('.not-found-js').modal('toggle');
   });
 
-  $('.menu__settings-link').hover(function () {
+  $('.menu__settings-link').hover(function (e) {
+    e.preventDefault();
     $('body').addClass('settings-hover');
   }, function () {
     setTimeout(function () {
@@ -286,6 +287,26 @@ $(document).ready(function () {
   $('.category-block__checkboxes--subcategory .custom-checkbox input').click(function(e) {
     $(this).closest('.category-block__checkboxes--subcategory').find('.custom-checkbox input').prop("checked", false);
     $(this).prop("checked", true);
+  });
+
+  $('#pwdId, #cPwdId').on('keyup', function (e) {
+    if ($('#pwdId').val() != '' && $('#cPwdId').val() != '' && $('#pwdId').val() == $('#cPwdId').val()) {
+      $(this).closest('form').find('[type="submit"]').attr("disabled", false);
+      $('.pwds').removeClass('is-invalid')
+    } else {
+      $(this).closest('form').find('[type="submit"]').attr("disabled", true);
+      $('.pwds').addClass('is-invalid')
+    }
+  });
+
+  $('#pwdId2, #cPwdId2').on('keyup', function (e) {
+    if ($('#pwdId2').val() != '' && $('#cPwdId2').val() != '' && $('#pwdId2').val() == $('#cPwdId2').val()) {
+      $(this).closest('form').find('[type="submit"]').attr("disabled", false);
+      $('.pwds2').removeClass('is-invalid')
+    } else {
+      $(this).closest('form').find('[type="submit"]').attr("disabled", true);
+      $('.pwds2').addClass('is-invalid')
+    }
   });
 
 });

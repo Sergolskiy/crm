@@ -86,35 +86,35 @@ footer.footer
             a.nav-link(data-toggle='tab', href='#editor', role='tab', aria-controls='editor', aria-selected='false') Редактор
         .tab-content
           #administration.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
-            form(novalidate).change-pass__from.needs-validation
+            form(novalidate action="#").change-pass__from.needs-validation
               .form-group
                 input#exampleInputPassword1.form-control(type='password' placeholder='' required)
                 .invalid-feedback Введен неверный пароль
                 label(for="exampleInputPassword1" class="col-form-label") Старый пароль
               .form-group
-                input#exampleInputPassword2.form-control(type='password' placeholder='' required)
+                input#pwdId.pwds.form-control(type='password' placeholder='' required)
                 .invalid-feedback Пароли должны совпадать
-                label(for="exampleInputPassword2" class="col-form-label") Новый пароль
+                label(for="pwdId" class="col-form-label") Новый пароль
               .form-group
-                input#exampleInputPassword3.form-control(type='password' placeholder='' required)
+                input#cPwdId.pwds.form-control(type='password' placeholder='' required)
                 .invalid-feedback Пароли должны совпадать
-                label(for="exampleInputPassword3" class="col-form-label") Повторите новый пароль
+                label(for="cPwdId" class="col-form-label") Повторите новый пароль
               .change-pass__form-btn
                 button.btn.btn-primary.btn-lg.btn-block(type='submit') Сохранить
           #editor.tab-pane.fade(role='tabpanel', aria-labelledby='editor-tab')
-            form(novalidate).change-pass__from.needs-validation
+            form(novalidate action="#").change-pass__from.needs-validation
               .form-group
                 input#exampleInputPassword4.form-control(type='password', placeholder='' required)
                 .invalid-feedback Введен неверный пароль
                 label(for="exampleInputPassword4" class="col-form-label") Старый пароль
               .form-group
-                input#exampleInputPassword5.form-control(type='password' placeholder='' required)
+                input#pwdId2.pwds2.form-control(type='password' placeholder='' required)
                 .invalid-feedback Пароли должны совпадать
-                label(for="exampleInputPassword5" class="col-form-label") Новый пароль
+                label(for="pwdId2" class="col-form-label") Новый пароль
               .form-group
-                input#exampleInputPassword6.form-control(type='password' placeholder='' required)
+                input#cPwdId2.pwds2.form-control(type='password' placeholder='' required)
                 .invalid-feedback Пароли должны совпадать
-                label(for="exampleInputPassword6" class="col-form-label") Повторите новый пароль
+                label(for="cPwdId2" class="col-form-label") Повторите новый пароль
               .change-pass__form-btn
                 button.btn.btn-primary.btn-lg.btn-block(type='submit') Сохранить
 

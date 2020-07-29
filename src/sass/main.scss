@@ -1998,3 +1998,9 @@ textarea{
 .category-block__checkboxes--subcategory{
   display: none;
 }
+
+.btn-primary.disabled, .btn-primary:disabled{
+  border-color: #072A4F;
+  background: #072A4F;
+  opacity: 1;
+}
