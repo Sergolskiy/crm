@@ -38,6 +38,17 @@ footer.footer
       .modal-footer
         button.btn(type='button' data-dismiss='modal') ОК
 
+.sched-public.published-note-js.modal.fade(tabindex='-1' role='dialog' aria-labelledby='alertTodayModalLabel' aria-hidden='true')
+  .modal-dialog.modal-dialog-centered(role='document')
+    .modal-content
+      .modal-header
+        span Опубликовать статью
+      .modal-body
+        span.modal-body__txt Вы уверены что хотите опубликовать <br> эту статью?
+      .modal-footer
+        button.btn.radio-not-published(type='button' data-dismiss='modal') Отмена
+        button.btn.btn-ok.radio-published(type='button' data-dismiss='modal') ОК
+
 .sched-public.remove-note-js.modal.fade(tabindex='-1' role='dialog' aria-labelledby='alertTodayModalLabel' aria-hidden='true')
   .modal-dialog.modal-dialog-centered(role='document')
     .modal-content
