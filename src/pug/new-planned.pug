@@ -3,7 +3,7 @@ extends _layout
 block vars
   - var pageTitle = "Home page";
   - var pageClass = "";
-  - var pageActive = "drafts";
+  - var pageActive = "homepage";
 
 block content
   //.webp-img(data-webp="./img/Rectangle5.webp" data-img="./img/Rectangle5.jpg")
@@ -14,7 +14,7 @@ block content
       img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img")
 
   div.main-wrap
-    h1.page-title Черновик
+    h1.page-title Публикация
 
     .content.container.article-page
       .row
@@ -39,8 +39,8 @@ block content
               a.nav-link(data-toggle='tab', href='#eng2', role='tab', aria-controls='profile', aria-selected='false') Русский
           .tab-content
             #rus2.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
-              textarea.form-control(rows='6' name='text-eng' value="") In a tweet about Seattle demonstrations, President Trump renewed a threat to take action against local prot
-              span.textarea-length(data-length="180") 107/180
+              textarea.form-control(rows='6' name='text-eng' value="") In a tweet about Seattle demonstrations, President Trump renewed a threat to take action against local protesters.protesters. against local
+              span.textarea-length(data-length="180") 140/180
             #eng2.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
               textarea.form-control(rows='6' name='rus-eng')
               span.textarea-length(data-length="180") 0/180
@@ -75,38 +75,40 @@ block content
                   a(href="javascript:void(0)").selected-photo__remove
 
         .col-md-4
+          .remove-article
+            a(href="#" data-toggle="modal" data-target=".remove-note-js").remove-article__inner Удалить статью
           .content__inner.content__inner--noborder.mb-4
             .status-block
               .block-title Статус
               .status-block__top.d-flex
                 span Выбрать:
                 .form-check.custom-control.custom-radio
-                  input#exampleRadios21.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='draft', checked='')
+                  input#exampleRadios21.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='draft')
                   label.form-check-label.custom-control-label(for='exampleRadios21')
                   span Черновик
                 .form-check.custom-control.custom-radio
-                  input#exampleRadios61.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='published')
+                  input#exampleRadios61.form-check-input.custom-control-input(type='radio', name='exampleRadios1', value='published', checked='')
                   label.form-check-label.custom-control-label(for='exampleRadios61')
                   span Публикация
-              .status-block__txt.status-block__planned
+              .status-block__txt.status-block__planned.active
                 span Эта публикация запланирована на:
                 span 21.06.2020 <br> 19:30
-              .status-block__btn.justify-content-between
+              .status-block__btn.justify-content-between.active
                 a(href="#" data-toggle="modal" data-target=".sched-public-js").btn.btn-secondary Запланировать
                 a(href="./article.html" ).btn.btn-primary.post-article Опубликовать
-              .status-block__btn.justify-content-between.active
+              .status-block__btn.justify-content-between
                 a(href="#" data-toggle="modal" data-target=".remove-note-js").btn.btn-secondary Удалить
                 a(href="./drafts.html" ).btn.btn-primary.post-article Сохранить
 
-          .content__inner.content__inner--noborder.mb-4
+          .content__inner.content__inner--noborder.mb-4.category-block__checkboxes--category
             .category-block
               .block-title Категория
               .category-block__checkboxes
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck1.custom-control-input(type='checkbox')
+                  input#customCheck1.custom-control-input(type='checkbox' data-subcategory="agri")
                   label.custom-control-label(for='customCheck1') Agri
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck2.custom-control-input(type='checkbox' checked)
+                  input#customCheck2.custom-control-input(type='checkbox' data-subcategory="agri")
                   label.custom-control-label(for='customCheck2') Energy
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck3.custom-control-input(type='checkbox')
@@ -116,13 +118,13 @@ block content
                   label.custom-control-label(for='customCheck4') Ecology
 
 
-          .content__inner.content__inner--noborder
+          .content__inner.content__inner--noborder.category-block__checkboxes--subcategory.agri
             .category-block
               .block-title Подкатегория
               .category-block__checkboxes
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck5.custom-control-input(type='checkbox' checked)
-                  label.custom-control-label(for='customCheck5') Weat
+                  input#customCheck5.custom-control-input(type='checkbox')
+                  label.custom-control-label(for='customCheck5') Wheat
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck6.custom-control-input(type='checkbox')
                   label.custom-control-label(for='customCheck6') Soybeans
@@ -141,7 +143,6 @@ block content
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck11.custom-control-input(type='checkbox')
                   label.custom-control-label(for='customCheck11') Niche
-
 
 
 
