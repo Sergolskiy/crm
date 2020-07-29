@@ -258,6 +258,7 @@ input{
     right: 15px;
     width: 20px;
     height: 22px;
+    display: flex;
 
     svg path{
       transition: 0.3s;
@@ -806,8 +807,8 @@ textarea{
 }
 
 .table{
-  thead{
-    tr{
+  & > thead{
+    & > tr{
       background: #FFFFFF;
       border: 0;
 
@@ -841,8 +842,8 @@ textarea{
 
 
   }
-  tbody{
-    tr{
+  & > tbody{
+    & > tr{
 
       &:nth-child(odd){
         background: #F9F9F9;
@@ -858,9 +859,10 @@ textarea{
 
         &:nth-child(1){
           min-width: 125px;
+          width: 12%;
         }
         &:nth-child(2){
-          width: 30%;
+          width: 40%;
           div{
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -1210,6 +1212,11 @@ textarea{
     letter-spacing: 0.005em;
     color: rgba(7, 42, 79, 0.7);
     display: inline-block;
+
+    &:hover{
+      font-weight: bold;
+      color: #072A4F;
+    }
   }
 
 }
@@ -1331,146 +1338,7 @@ textarea{
     }
   }
 
-  .datepicker-modal{
-    margin: 0 auto;
 
-    .datepicker-date-display .date-text{
-      color: #F5F6FA;
-    }
-
-    .datepicker-controls > button{
-      margin-top: 0;
-    }
-
-    .select-wrapper input.select-dropdown{
-      font-family: "Roboto";
-      border-bottom: 0;
-      font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 0;
-      text-align: center;
-      color: #596079;
-    }
-
-    .datepicker-container{
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .datepicker-date-display{
-      background: #1A2327;
-    }
-
-    .datepicker-calendar-container{
-      background: #F5F6FA;
-    }
-
-    .datepicker-day-button{
-      font-family: "Roboto";
-      font-weight: 700;
-      font-size: 18px;
-      text-align: center;
-      color: #646464;
-    }
-
-    .is-selected .datepicker-day-button{
-      background: #072A4F;
-      color: white;
-    }
-
-    .is-today .datepicker-day-button{
-      color: #072A4F;
-    }
-
-    .datepicker-table thead{
-      display: none;
-    }
-
-    .confirmation-btns{
-      margin-top: 20px;
-    }
-
-    .confirmation-btns > button{
-      font-family: "Roboto";
-      border: 0;
-      background: transparent;
-      font-size: 16px;
-      line-height: 19px;
-      letter-spacing: 0.005em;
-      text-transform: uppercase;
-      color: #072A4F;
-    }
-  }
-
-  .timepicker-modal{
-    margin: 0 auto;
-
-    .timepicker-text-container span{
-      color: rgba(245, 246, 250, 0.57);
-    }
-
-    .timepicker-span-am-pm > div{
-      color: rgba(245, 246, 250, 0.57);
-    }
-
-    .timepicker-container{
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .timepicker-digital-display{
-      background-color: #1A2327;
-    }
-
-    .timepicker-analog-display{
-      background-color: #F5F6FA;
-    }
-
-    .datepicker-table thead{
-      display: none;
-    }
-
-    .confirmation-btns{
-      margin-top: 20px;
-    }
-
-    .confirmation-btns > button{
-      font-family: "Roboto";
-      border: 0;
-      background: transparent;
-      font-size: 16px;
-      line-height: 19px;
-      letter-spacing: 0.005em;
-      text-transform: uppercase;
-      color: #072A4F;
-    }
-
-    .text-primary{
-      color: white !important;
-    }
-
-    .timepicker-tick{
-      transition: .15s all;
-      font-weight: 700;
-    }
-
-    .timepicker-tick.active, .timepicker-tick:hover{
-      background-color:  #072A4F !important;
-      color: white !important;
-    }
-
-    .timepicker-canvas line{
-      stroke: rgba(7, 42, 79, 0.5);
-    }
-
-    .timepicker-canvas-bg{
-      fill: rgba(7, 42, 79, 0.5);
-    }
-
-    .timepicker-canvas-bearing{
-      fill: #072A4F;
-    }
-  }
 
   .modal-footer{
     border: 0;
@@ -1487,12 +1355,16 @@ textarea{
       border: 0;
       background: transparent;
 
+      &:hover{
+        font-weight: 700!important;
+        color: #072A4F;
+      }
+
+
       &:not(:disabled):not(.disabled):active{
         color: inherit;
         background-color: transparent;
         border-color:  transparent;
-        font-weight: bold;
-        color: #072A4F;
       }
 
       &:focus,
@@ -1502,6 +1374,173 @@ textarea{
     };
   }
 
+
+  .correct-field > svg path{
+    fill: #181D30;
+    fill-opacity: 1;
+  }
+
+  .correct-field > input{
+    border-color: #2DA82D;
+  }
+
+  .error-field > input{
+    border-color: #EB0029;
+  }
+
+}
+
+.datepicker-modal{
+  margin: 0 auto;
+  * {
+    font-family: "Roboto";
+  }
+
+
+  .datepicker-date-display .date-text{
+    color: #F5F6FA;
+  }
+
+  .datepicker-controls > button{
+    margin-top: 0;
+  }
+
+  .select-wrapper input.select-dropdown{
+    font-family: "Roboto";
+    border-bottom: 0;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #596079;
+  }
+
+  .datepicker-container{
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .datepicker-date-display{
+    background: #1A2327;
+  }
+
+  .datepicker-calendar-container{
+    background: #F5F6FA;
+  }
+
+  .datepicker-day-button{
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    color: #646464;
+  }
+
+  .is-selected .datepicker-day-button{
+    background: #072A4F;
+    color: white;
+  }
+
+  .is-today .datepicker-day-button{
+    color: #072A4F;
+  }
+
+  .datepicker-table thead{
+    display: none;
+  }
+
+  .confirmation-btns{
+    margin-top: 20px;
+  }
+
+  .confirmation-btns > button{
+    font-family: "Roboto";
+    border: 0;
+    background: transparent;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: #072A4F;
+  }
+
+  .datepicker-table td, .datepicker-table  th{
+    border-top: 0;
+  }
+}
+
+.timepicker-modal{
+  margin: 0 auto;
+  * {
+    font-family: "Roboto";
+  }
+
+
+  .timepicker-text-container span{
+    color: rgba(245, 246, 250, 0.57);
+  }
+
+  .timepicker-span-am-pm > div{
+    color: rgba(245, 246, 250, 0.57);
+  }
+
+  .timepicker-container{
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .timepicker-digital-display{
+    background-color: #1A2327;
+  }
+
+  .timepicker-analog-display{
+    background-color: #F5F6FA;
+  }
+
+  .datepicker-table thead{
+    display: none;
+  }
+
+  .confirmation-btns{
+    margin-top: 20px;
+  }
+
+  .confirmation-btns > button{
+    font-family: "Roboto";
+    border: 0;
+    background: transparent;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: #072A4F;
+  }
+
+  .text-primary{
+    color: white !important;
+  }
+
+  .timepicker-tick{
+    transition: .15s all;
+    font-weight: 700;
+  }
+
+  .timepicker-tick.active, .timepicker-tick:hover{
+    background-color:  #072A4F !important;
+    color: white !important;
+  }
+
+  .timepicker-canvas line{
+    stroke: rgba(7, 42, 79, 0.5);
+  }
+
+  .timepicker-canvas-bg{
+    fill: rgba(7, 42, 79, 0.5);
+  }
+
+  .timepicker-canvas-bearing{
+    fill: #072A4F;
+  }
 }
 
 .change-pass{
@@ -1865,6 +1904,51 @@ textarea{
 
 }
 
+.calendar ~ .modal-overlay{
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+    background: black;
+}
+
+.modal-header__big{
+  font-weight: 500 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  color: #181D30 !important;
+}
+
+.modal-body__txt{
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.005em;
+  color: rgba(24, 29, 48, 0.8);
+  padding-bottom: 2rem;
+  display: flex;
+}
+
+.btn-ok{
+  font-weight: normal !important;
+}
+
 .main-page{
   background: #1A2327;
+}
+
+.settings-hover .tooltip{
+  .tooltip-inner{
+    background: rgba(48, 48, 48, 0.64);
+    backdrop-filter: blur(4px);
+    padding: 3px 13px;
+  }
+
+
+
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.005em;
+  color: #FFFFFF;
 }
