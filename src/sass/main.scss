@@ -710,9 +710,11 @@ textarea{
     .col-md-8 {
       flex: 0 0 58.333333%;
       max-width: 58.333333%;
+      padding-right: 10px;
     }
 
     .col-md-4{
+      padding-left: 10px;
       flex: 0 0 41.666667%;
       max-width: 41.666667%;
     }
@@ -1106,7 +1108,7 @@ textarea{
 
   &__inner{
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     flex-wrap: wrap;
   }
 
@@ -1127,6 +1129,10 @@ textarea{
     //height: 12vw;
     //min-height: 242px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+    @include for-1400{
+      min-width: 185px;
+    }
 
     span{
       position: absolute;
@@ -1182,6 +1188,10 @@ textarea{
     align-items: center;
     justify-content: center;
     height: 100%;
+
+    @include for-1400{
+      min-width: 180px;
+    }
 
     img{
       max-width: 90%;
@@ -1302,9 +1312,13 @@ textarea{
 }
 
 .remove-article{
-  display: flex;
+  display: none;
   justify-content: flex-end;
   margin-bottom: 10px;
+
+  &.active{
+    display: flex;
+  }
 
   &__inner{
     font-size: 16px;
