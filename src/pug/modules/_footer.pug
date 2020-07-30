@@ -5,6 +5,7 @@ footer.footer
   //button(type="button" class="btn btn-primary" data-toggle="modal" data-target=".remove-note-js") remove-note
   //button(type="button" class="btn btn-primary" data-toggle="modal" data-target=".not-found-js") not-found
   //button(type="button" class="btn btn-primary" data-toggle="modal" data-target=".add-quote") add
+  //button(type="button" class="btn btn-primary" data-toggle="modal" data-target=".forgot-pass-js") forgot-pass
 
 .sched-public.sched-public-js.modal.fade(tabindex='-1' role='dialog' aria-labelledby='schedPublicModalLabel' aria-hidden='true')
   .modal-dialog.modal-dialog-centered(role='document')
@@ -90,6 +91,14 @@ footer.footer
         span УПС!
       .modal-body
         span.modal-body__txt По такому запросу не найдено статей.
+      .modal-footer
+        button.btn(type='button' data-dismiss='modal') ОК
+
+.sched-public.forgot-pass-js.modal.fade(tabindex='-1' role='dialog' aria-labelledby='alertTodayModalLabel' aria-hidden='true')
+  .modal-dialog.modal-dialog-centered(role='document')
+    .modal-content
+      .modal-header
+        span На вашу почту был отправлен пароль
       .modal-footer
         button.btn(type='button' data-dismiss='modal') ОК
 
