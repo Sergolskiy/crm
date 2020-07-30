@@ -96,33 +96,33 @@ block content
                 a(href="./article.html" ).btn.btn-primary.post-article Опубликовать
               .status-block__btn.justify-content-between.active
                 a(href="#" data-toggle="modal" data-target=".remove-note-js").btn.btn-secondary Удалить
-                a(href="./drafts.html" ).btn.btn-primary.post-article Опубликовать
+                a(href="./drafts.html" ).btn.btn-primary.post-article Сохранить
 
-          .content__inner.content__inner--noborder.mb-4
+          .content__inner.content__inner--noborder.mb-4.category-block__checkboxes--category
             .category-block
               .block-title Категория
               .category-block__checkboxes
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck1.custom-control-input(type='checkbox')
+                  input#customCheck1.custom-control-input(type='checkbox' data-subcategory="agri")
                   label.custom-control-label(for='customCheck1') Agri
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck2.custom-control-input(type='checkbox' checked)
+                  input#customCheck2.custom-control-input(type='checkbox' )
                   label.custom-control-label(for='customCheck2') Energy
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck3.custom-control-input(type='checkbox')
                   label.custom-control-label(for='customCheck3') Finance
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck4.custom-control-input(type='checkbox')
+                  input#customCheck4.custom-control-input(type='checkbox' data-subcategory="agri")
                   label.custom-control-label(for='customCheck4') Ecology
 
 
-          .content__inner.content__inner--noborder
+          .content__inner.content__inner--noborder.category-block__checkboxes--subcategory.agri
             .category-block
               .block-title Подкатегория
               .category-block__checkboxes
                 .custom-control.custom-checkbox.custom-checkbox-1
-                  input#customCheck5.custom-control-input(type='checkbox' checked)
-                  label.custom-control-label(for='customCheck5') Weat
+                  input#customCheck5.custom-control-input(type='checkbox')
+                  label.custom-control-label(for='customCheck5') Wheat
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck6.custom-control-input(type='checkbox')
                   label.custom-control-label(for='customCheck6') Soybeans
@@ -141,7 +141,6 @@ block content
                 .custom-control.custom-checkbox.custom-checkbox-1
                   input#customCheck11.custom-control-input(type='checkbox')
                   label.custom-control-label(for='customCheck11') Niche
-
 
 
 
